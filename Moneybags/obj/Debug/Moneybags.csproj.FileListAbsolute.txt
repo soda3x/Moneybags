@@ -1,0 +1,16 @@
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\Moneybags.exe.config
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\Moneybags.exe
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\Moneybags.pdb
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\MetroFramework.dll
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.csprojAssemblyReference.cache
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.Main.resources
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.Properties.Resources.resources
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.csproj.GenerateResource.cache
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.csproj.CoreCompileInputs.cache
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.csproj.CopyComplete
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.exe
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.pdb
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.InvoiceCreator.resources
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.ItemCreator.resources
+C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\obj\Debug\Moneybags.PersonaCreator.resources
