@@ -18,6 +18,7 @@ namespace Moneybags
         public PersonaCreator()
         {
             InitializeComponent();
+            PrefillDataFromLoadedPersona();
         }
 
         private Persona CreatePersona(string filePath)
@@ -58,7 +59,6 @@ namespace Moneybags
                 RestoreDirectory = true,
                 Title = "Choose a location to save your new Persona",
                 DefaultExt = "mbpersona",
-                CheckFileExists = true,
                 CheckPathExists = true,
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
@@ -83,7 +83,6 @@ namespace Moneybags
                 RestoreDirectory = true,
                 Title = "Choose a location to save your new Persona",
                 DefaultExt = "mbpersona",
-                CheckFileExists = true,
                 CheckPathExists = true,
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
@@ -94,6 +93,29 @@ namespace Moneybags
                 Stream stream = new FileStream(saveFileDialog.FileName, FileMode.Create, FileAccess.Write);
                 formatter.Serialize(stream, this.CreatePersona(saveFileDialog.FileName));
                 stream.Close();
+            }
+        }
+
+        private void PrefillDataFromLoadedPersona()
+        {
+            FileInfo fileInfo = new FileInfo(@".\currentuser");
+            if (fileInfo.Exists)
+            {
+                string path = "";
+                using (StreamReader streamReader = fileInfo.OpenText())
+                {
+                    path = streamReader.ReadLine();
+                }
+                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                IFormatter formatter = new BinaryFormatter();
+                Persona loadedPersona = (Persona)formatter.Deserialize(stream);
+                firstNameTB.Text = loadedPersona.FirstName;
+                lastNameTB.Text = loadedPersona.LastName;
+                abnTB.Text = loadedPersona.ABN.ToString();
+                addressLine1TB.Text = loadedPersona.AddressLine1;
+                addressLine2TB.Text = loadedPersona.AddressLine2;
+                postal1TB.Text = loadedPersona.PostalAddressLine1;
+                postal2TB.Text = loadedPersona.PostalAddressLine2;
             }
         }
 
@@ -118,6 +140,7 @@ namespace Moneybags
                 IFormatter formatter = new BinaryFormatter();
                 Persona loadedPersona = (Persona)formatter.Deserialize(stream);
                 SetAsActivePersona(loadedPersona);
+                PrefillDataFromLoadedPersona();
             }
         }
     }
