@@ -1,15 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Moneybags
 {
     class HTMLCreator
     {
         private string FilePath { get; set; }
-        public HTMLCreator(string filePath)
+        private ListView ListView { get; set; }
+        public HTMLCreator(string filePath, ListView listView)
         {
             this.FilePath = filePath;
+            this.ListView = listView;
             FileInfo fileInfo = new FileInfo(filePath);
             if (File.Exists(@"./HTML/Output.html"))
             {
@@ -37,6 +41,18 @@ namespace Moneybags
             content = content.Replace("{AMT_REC}", inputDict["AMT_REC"]);
             content = content.Replace("{INV_BAL}", inputDict["INV_BAL"]);
             File.WriteAllText("./HTML/Output.html", content);
+
+
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex("<tbody>(.*)</tbody>");
+            regex.Match(content);
+            List<string> rows = new List<string>();
+            foreach (ListViewItem item in this.ListView.Items)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<tr>");
+                rows.Append(sb.ToString());
+            }
+            string output = System.Text.RegularExpressions.Regex.Replace(content, "<tbody>(.*)</tbody>", string.Format("<tbody>rows go here</tbody>"));
         }
     }
 }

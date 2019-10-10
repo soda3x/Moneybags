@@ -87,7 +87,7 @@ namespace Moneybags
             dict.Add("AMT_REC", "Total Amount Received Here");
             dict.Add("INV_BAL", "Invoice Balance Here");
 
-            HTMLCreator htmlCreator = new HTMLCreator("./HTML/pdf_template.html");
+            HTMLCreator htmlCreator = new HTMLCreator("./HTML/pdf_template.html", this.itemsListView);
             htmlCreator.GenerateHTMLFile(dict);
             invoiceSuccessLabel.Visible = true;
         }
