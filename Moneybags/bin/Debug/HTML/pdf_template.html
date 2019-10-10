@@ -12,39 +12,27 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
+            </br>
+        </br>
+                    <h5 class="text-left">{ADDR_LINE_1}</h5>
+                    <h5 class="text-left text-muted">{ADDR_LINE_2}</h5>
             </div>
             <div class="col-sm">
             </div>
             <div class="col-sm">
-                    <dl class="row">
-                            <dt class="col-sm-6 text-right">Invoice No.:</dt>
-                            <dd class="col-sm-3 text-right"><small class="text-muted">{INV_NO}</small></dd>
-                            <dt class="col-sm-6 text-right">Date:</dt>
-                            <dd class="col-sm-3 text-right"><small class="text-muted">{DATE}</small></dd>
-                    </dl>
+                            <h5 class="text-left">Invoice ID: <small class="text-muted">{INV_NO}</small></h5>
+                            <h5 class="text-left">Date: <small class="text-muted">{DATE}</small></h5>
+                            <h5 class="text-left">Deliver To: <small class="text-muted">{POSTAL_LINE_1}</small></h5>
+                            <h5 class="text-left"><small class="text-muted">{POSTAL_LINE_2}</small></h5>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                        <dl class="row">
-                                <dd class="col-sm-3 text-left">
-                                    <p><small class="text-muted">{ADDR_LINE_1}</small></p>
-                                    <p><small class="text-muted">{ADDR_LINE_2}</small></p>
-                                </dd>
-                        </dl>
                 </div>
+                <div class="col-sm"></div>
                 <div class="col-sm">
-                </div>
-                <div class="col-sm">
-                        <dl class="row">
-                                <dt class="col-sm-6 text-right">Deliver To:</dt>
-                                <dd class="col-sm-3 text-right">
-                                    <p><small class="text-muted">{POSTAL_LINE_1}</small></p>
-                                    <p><small class="text-muted">{POSTAL_LINE_2}</small></p>
-                                </dd>
-                        </dl>
                 </div>
             </div>
 
@@ -65,14 +53,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>{ITEM_CODE}</td>
-                            <td>{DESCRIPTION}</td>
-                            <td>{UNIT_PRICE}</td>
-                            <td>{QUANTITY}</td>
-                            <td>{ITEM_GST}</td>
-                            <td>{ITEM_TOTAL}</td>
-                        </tr>
+                        {ROWS}
                     </tbody>
                 </table>
             </div>
@@ -96,9 +77,7 @@
                                     
                                     <dt class="col-sm-6 text-right alert-dark">Amount Received</dt>
                                     <dd class="col-sm-3 text-right"><small class="text-muted">{AMT_REC}</small></dd>
-                                </dl>
 
-                                <dl class="row">
                                     <dt class="col-sm-6 text-right alert-dark">Invoice Balance</dt>
                                     <dd class="col-sm-3 text-right"><small class="text-muted">{INV_BAL}</small></dd>
                                 </dl>

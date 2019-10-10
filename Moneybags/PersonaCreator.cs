@@ -66,7 +66,7 @@ namespace Moneybags
                 formatter.Serialize(stream, newPersona);
                 stream.Close();
             }
-
+            Application.Restart();
         }
 
         private void SavePersonaToFileBtn_Click(object sender, EventArgs e)

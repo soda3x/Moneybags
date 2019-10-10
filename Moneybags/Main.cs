@@ -2,6 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 namespace Moneybags
 {
@@ -25,12 +26,18 @@ namespace Moneybags
                 {
                     path = streamReader.ReadLine();
                 }
-                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
-                IFormatter formatter = new BinaryFormatter();
-                Persona loadedPersona = (Persona)formatter.Deserialize(stream);
-                this.Text = "Welcome back, " + loadedPersona.FirstName;
-                welcomeLabel.Text = "What would you like to do?";
-                choosePersonaLabel.Text = "Choose Persona";
+                if (!File.Exists(path))
+                {
+                    MessageBox.Show("Could not find Persona file at: " + fileInfo.FullName +"\nPress OK to start without it");
+                    File.Delete(@".\currentuser");
+                    Application.Restart();
+                }
+                    FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                    IFormatter formatter = new BinaryFormatter();
+                    Persona loadedPersona = (Persona)formatter.Deserialize(stream);
+                    this.Text = "Welcome back, " + loadedPersona.FirstName;
+                    welcomeLabel.Text = "What would you like to do?";
+                    choosePersonaLabel.Text = "Choose Persona";
             }
             else
             {

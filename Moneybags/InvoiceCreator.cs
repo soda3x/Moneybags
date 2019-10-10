@@ -8,6 +8,7 @@ namespace Moneybags
 {
     public partial class InvoiceCreator : MetroFramework.Forms.MetroForm
     {
+
         public InvoiceCreator()
         {
             InitializeComponent();
@@ -77,15 +78,9 @@ namespace Moneybags
             dict.Add("ABN", persona.ABN.ToString());
             dict.Add("POSTAL_LINE_1", persona.PostalAddressLine1);
             dict.Add("POSTAL_LINE_2", persona.PostalAddressLine2);
-            dict.Add("INV_NO", "Invoice Number Here");
             dict.Add("DATE", DateTime.Now.ToShortDateString());
             dict.Add("ADDR_LINE_1", persona.AddressLine1);
             dict.Add("ADDR_LINE_2", persona.AddressLine2);
-            dict.Add("TOTAL_EXCL_GST", "Total Excl GST Here");
-            dict.Add("GST", "GST Here");
-            dict.Add("TOTAL_INCL_GST", "Total Incl GST Here");
-            dict.Add("AMT_REC", "Total Amount Received Here");
-            dict.Add("INV_BAL", "Invoice Balance Here");
 
             HTMLCreator htmlCreator = new HTMLCreator("./HTML/pdf_template.html", this.itemsListView);
             htmlCreator.GenerateHTMLFile(dict);
