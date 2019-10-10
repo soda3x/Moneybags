@@ -28,184 +28,206 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.loadPersonaFromFileBtn = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.firstNameTB = new MetroFramework.Controls.MetroTextBox();
+            this.lastNameTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.abnTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.addressLine1TB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
+            this.addressLine2TB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
+            this.postal2TB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox7 = new MetroFramework.Controls.MetroTextBox();
+            this.postal1TB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.saveAndUsePersonaBtn = new MetroFramework.Controls.MetroButton();
+            this.savePersonaToFileBtn = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // metroButton1
+            // loadPersonaFromFileBtn
             // 
-            this.metroButton1.Location = new System.Drawing.Point(83, 369);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(144, 23);
-            this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "Load Persona from File";
+            this.loadPersonaFromFileBtn.Location = new System.Drawing.Point(111, 454);
+            this.loadPersonaFromFileBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loadPersonaFromFileBtn.Name = "loadPersonaFromFileBtn";
+            this.loadPersonaFromFileBtn.Size = new System.Drawing.Size(192, 28);
+            this.loadPersonaFromFileBtn.TabIndex = 0;
+            this.loadPersonaFromFileBtn.Text = "Load Persona from File";
+            this.loadPersonaFromFileBtn.Click += new System.EventHandler(this.LoadPersonaFromFileBtn_Click);
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 83);
+            this.metroLabel1.Location = new System.Drawing.Point(31, 102);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(73, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(76, 20);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "First Name";
             // 
-            // metroTextBox1
+            // firstNameTB
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(322, 83);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(277, 23);
-            this.metroTextBox1.TabIndex = 2;
+            this.firstNameTB.Location = new System.Drawing.Point(429, 102);
+            this.firstNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstNameTB.Name = "firstNameTB";
+            this.firstNameTB.Size = new System.Drawing.Size(369, 28);
+            this.firstNameTB.TabIndex = 2;
             // 
-            // metroTextBox2
+            // lastNameTB
             // 
-            this.metroTextBox2.Location = new System.Drawing.Point(322, 112);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(277, 23);
-            this.metroTextBox2.TabIndex = 4;
+            this.lastNameTB.Location = new System.Drawing.Point(429, 138);
+            this.lastNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lastNameTB.Name = "lastNameTB";
+            this.lastNameTB.Size = new System.Drawing.Size(369, 28);
+            this.lastNameTB.TabIndex = 4;
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 112);
+            this.metroLabel2.Location = new System.Drawing.Point(31, 138);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(75, 20);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Last Name";
             // 
-            // metroTextBox3
+            // abnTB
             // 
-            this.metroTextBox3.Location = new System.Drawing.Point(322, 141);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(277, 23);
-            this.metroTextBox3.TabIndex = 6;
+            this.abnTB.Location = new System.Drawing.Point(429, 174);
+            this.abnTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.abnTB.Name = "abnTB";
+            this.abnTB.Size = new System.Drawing.Size(369, 28);
+            this.abnTB.TabIndex = 6;
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 141);
+            this.metroLabel3.Location = new System.Drawing.Point(31, 174);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(37, 20);
             this.metroLabel3.TabIndex = 5;
             this.metroLabel3.Text = "ABN";
             // 
-            // metroTextBox4
+            // addressLine1TB
             // 
-            this.metroTextBox4.Location = new System.Drawing.Point(322, 170);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(277, 23);
-            this.metroTextBox4.TabIndex = 8;
+            this.addressLine1TB.Location = new System.Drawing.Point(429, 209);
+            this.addressLine1TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addressLine1TB.Name = "addressLine1TB";
+            this.addressLine1TB.Size = new System.Drawing.Size(369, 28);
+            this.addressLine1TB.TabIndex = 8;
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(23, 170);
+            this.metroLabel4.Location = new System.Drawing.Point(31, 209);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(98, 20);
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "Address Line 1";
             // 
-            // metroTextBox5
+            // addressLine2TB
             // 
-            this.metroTextBox5.Location = new System.Drawing.Point(322, 199);
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.Size = new System.Drawing.Size(277, 23);
-            this.metroTextBox5.TabIndex = 10;
+            this.addressLine2TB.Location = new System.Drawing.Point(429, 245);
+            this.addressLine2TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addressLine2TB.Name = "addressLine2TB";
+            this.addressLine2TB.Size = new System.Drawing.Size(369, 28);
+            this.addressLine2TB.TabIndex = 10;
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(23, 199);
+            this.metroLabel5.Location = new System.Drawing.Point(31, 245);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(101, 20);
             this.metroLabel5.TabIndex = 9;
             this.metroLabel5.Text = "Address Line 2";
             // 
-            // metroTextBox6
+            // postal2TB
             // 
-            this.metroTextBox6.Location = new System.Drawing.Point(322, 257);
-            this.metroTextBox6.Name = "metroTextBox6";
-            this.metroTextBox6.Size = new System.Drawing.Size(277, 23);
-            this.metroTextBox6.TabIndex = 14;
+            this.postal2TB.Location = new System.Drawing.Point(429, 316);
+            this.postal2TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.postal2TB.Name = "postal2TB";
+            this.postal2TB.Size = new System.Drawing.Size(369, 28);
+            this.postal2TB.TabIndex = 14;
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(23, 257);
+            this.metroLabel6.Location = new System.Drawing.Point(31, 316);
+            this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(132, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(140, 20);
             this.metroLabel6.TabIndex = 13;
             this.metroLabel6.Text = "Postal Address Line 2";
             // 
-            // metroTextBox7
+            // postal1TB
             // 
-            this.metroTextBox7.Location = new System.Drawing.Point(322, 228);
-            this.metroTextBox7.Name = "metroTextBox7";
-            this.metroTextBox7.Size = new System.Drawing.Size(277, 23);
-            this.metroTextBox7.TabIndex = 12;
+            this.postal1TB.Location = new System.Drawing.Point(429, 281);
+            this.postal1TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.postal1TB.Name = "postal1TB";
+            this.postal1TB.Size = new System.Drawing.Size(369, 28);
+            this.postal1TB.TabIndex = 12;
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(23, 228);
+            this.metroLabel7.Location = new System.Drawing.Point(31, 281);
+            this.metroLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(130, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(137, 20);
             this.metroLabel7.TabIndex = 11;
             this.metroLabel7.Text = "Postal Address Line 1";
             // 
-            // metroButton2
+            // saveAndUsePersonaBtn
             // 
-            this.metroButton2.Location = new System.Drawing.Point(428, 369);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(171, 23);
-            this.metroButton2.TabIndex = 15;
-            this.metroButton2.Text = "Save and Use as Active Persona";
+            this.saveAndUsePersonaBtn.Location = new System.Drawing.Point(571, 454);
+            this.saveAndUsePersonaBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveAndUsePersonaBtn.Name = "saveAndUsePersonaBtn";
+            this.saveAndUsePersonaBtn.Size = new System.Drawing.Size(228, 28);
+            this.saveAndUsePersonaBtn.TabIndex = 15;
+            this.saveAndUsePersonaBtn.Text = "Save and Use as Active Persona";
+            this.saveAndUsePersonaBtn.Click += new System.EventHandler(this.SaveAndUsePersonaBtn_Click);
             // 
-            // metroButton3
+            // savePersonaToFileBtn
             // 
-            this.metroButton3.Location = new System.Drawing.Point(242, 369);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(171, 23);
-            this.metroButton3.TabIndex = 16;
-            this.metroButton3.Text = "Save Persona to File";
+            this.savePersonaToFileBtn.Location = new System.Drawing.Point(323, 454);
+            this.savePersonaToFileBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.savePersonaToFileBtn.Name = "savePersonaToFileBtn";
+            this.savePersonaToFileBtn.Size = new System.Drawing.Size(228, 28);
+            this.savePersonaToFileBtn.TabIndex = 16;
+            this.savePersonaToFileBtn.Text = "Save Persona to File";
+            this.savePersonaToFileBtn.Click += new System.EventHandler(this.SavePersonaToFileBtn_Click);
             // 
             // PersonaCreator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 415);
-            this.Controls.Add(this.metroButton3);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroTextBox6);
+            this.ClientSize = new System.Drawing.Size(829, 511);
+            this.Controls.Add(this.savePersonaToFileBtn);
+            this.Controls.Add(this.saveAndUsePersonaBtn);
+            this.Controls.Add(this.postal2TB);
             this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.metroTextBox7);
+            this.Controls.Add(this.postal1TB);
             this.Controls.Add(this.metroLabel7);
-            this.Controls.Add(this.metroTextBox5);
+            this.Controls.Add(this.addressLine2TB);
             this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.metroTextBox4);
+            this.Controls.Add(this.addressLine1TB);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.metroTextBox3);
+            this.Controls.Add(this.abnTB);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroTextBox2);
+            this.Controls.Add(this.lastNameTB);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.firstNameTB);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.loadPersonaFromFileBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PersonaCreator";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Persona Creator";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,22 +236,22 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton loadPersonaFromFileBtn;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroTextBox firstNameTB;
+        private MetroFramework.Controls.MetroTextBox lastNameTB;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox abnTB;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroTextBox addressLine1TB;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
+        private MetroFramework.Controls.MetroTextBox addressLine2TB;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox6;
+        private MetroFramework.Controls.MetroTextBox postal2TB;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroTextBox metroTextBox7;
+        private MetroFramework.Controls.MetroTextBox postal1TB;
         private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton saveAndUsePersonaBtn;
+        private MetroFramework.Controls.MetroButton savePersonaToFileBtn;
     }
 }

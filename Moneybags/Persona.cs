@@ -16,6 +16,7 @@ namespace Moneybags
         public string AddressLine2 { get; set; }
         public string PostalAddressLine1 { get; set; }
         public string PostalAddressLine2 { get; set; }
+        public string path { get; set; }
 
         public Persona(string firstName, string lastName, long ABN, string addressLine1, string addressLine2, string postalAddressLine1, string postalAddressLine2)
         {
@@ -26,6 +27,11 @@ namespace Moneybags
             this.AddressLine2 = addressLine2;
             this.PostalAddressLine1 = postalAddressLine1;
             this.PostalAddressLine2 = postalAddressLine2;
+        }
+
+        public void SetPath(string filePath)
+        {
+            this.path = filePath;
         }
     }
 }
