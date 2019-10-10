@@ -129,7 +129,21 @@
     <None Include="Resources\newinvoiceicon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HTML\bootstrap\bootstrap-grid.css" />
+    <Content Include="HTML\bootstrap\bootstrap-reboot.css" />
+    <Content Include="HTML\bootstrap\bootstrap.bundle.js" />
+    <Content Include="HTML\bootstrap\bootstrap.css" />
+    <Content Include="HTML\bootstrap\bootstrap.js" />
+    <Content Include="HTML\jquery\jquery-3.4.1.slim.min.js" />
+    <Content Include="HTML\pdf_template.html" />
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(ProjectDir)HTML\*.*" "$(SolutionDir)MoneyBags\bin\Debug\HTML" /Y /I /E</PreBuildEvent>
+  </PropertyGroup>
 </Project>

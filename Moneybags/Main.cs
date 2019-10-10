@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Moneybags
 {
@@ -38,6 +30,11 @@ namespace Moneybags
                 Persona loadedPersona = (Persona)formatter.Deserialize(stream);
                 this.Text = "Welcome back, " + loadedPersona.FirstName;
                 welcomeLabel.Text = "What would you like to do?";
+                choosePersonaLabel.Text = "Choose Persona";
+            }
+            else
+            {
+                choosePersonaLabel.Text = "Create a Persona";
             }
         }
 

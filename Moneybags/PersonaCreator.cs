@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Moneybags
@@ -41,7 +34,8 @@ namespace Moneybags
                 {
                     streamWriter.WriteLine(persona.path);
                 }
-            } else
+            }
+            else
             {
                 File.WriteAllText(@".\currentuser", string.Empty);
                 using (StreamWriter streamWriter = fileInfo.CreateText())
@@ -72,7 +66,7 @@ namespace Moneybags
                 formatter.Serialize(stream, newPersona);
                 stream.Close();
             }
-            
+
         }
 
         private void SavePersonaToFileBtn_Click(object sender, EventArgs e)

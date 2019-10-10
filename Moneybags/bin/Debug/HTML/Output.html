@@ -1,0 +1,110 @@
+<head>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-3 text-center">Brad Newman</h1>
+        <h5 class="text-center">ABN <small class="text-muted">333666999</small></h5>
+        <h5 class="text-center">PO Box 343 Whiterun</h5>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                    <dl class="row">
+                            <dt class="col-sm-6 text-right">Invoice No.:</dt>
+                            <dd class="col-sm-3 text-right"><small class="text-muted">Invoice Number Here</small></dd>
+                            <dt class="col-sm-6 text-right">Date:</dt>
+                            <dd class="col-sm-3 text-right"><small class="text-muted">10/10/2019</small></dd>
+                    </dl>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                        <dl class="row">
+                                <dd class="col-sm-3 text-left">
+                                    <p><small class="text-muted">123 Loser Ave</small></p>
+                                    <p><small class="text-muted">Semaphore SA</small></p>
+                                </dd>
+                        </dl>
+                </div>
+                <div class="col-sm">
+                </div>
+                <div class="col-sm">
+                        <dl class="row">
+                                <dt class="col-sm-6 text-right">Deliver To:</dt>
+                                <dd class="col-sm-3 text-right">
+                                    <p><small class="text-muted">PO Box 343</small></p>
+                                    <p><small class="text-muted">Whiterun</small></p>
+                                </dd>
+                        </dl>
+                </div>
+            </div>
+
+            <div class="container">
+                <h1 class="text-center">Tax Invoice</h1>
+            </div>
+
+            <div class="container">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">GST</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{ITEM_CODE}</td>
+                            <td>{DESCRIPTION}</td>
+                            <td>{UNIT_PRICE}</td>
+                            <td>{QUANTITY}</td>
+                            <td>{ITEM_GST}</td>
+                            <td>{ITEM_TOTAL}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container">
+                    <div class="row">
+                            <div class="col-sm">
+                            </div>
+                            <div class="col-sm">
+                            </div>
+                            <div class="col-sm">
+                                <dl class="row">
+                                    <dt class="col-sm-6 text-right alert-dark">Total excluding GST</dt>
+                                    <dd class="col-sm-3 text-right"><small class="text-muted">Total Excl GST Here</small></dd>
+
+                                    <dt class="col-sm-6 text-right alert-dark">GST</dt>
+                                    <dd class="col-sm-3 text-right"><small class="text-muted">GST Here</small></dd>
+
+                                    <dt class="col-sm-6 text-right alert-dark">Total including GST</dt>
+                                    <dd class="col-sm-3 text-right"><small class="text-muted">Total Incl GST Here</small></dd>
+                                    
+                                    <dt class="col-sm-6 text-right alert-dark">Amount Received</dt>
+                                    <dd class="col-sm-3 text-right"><small class="text-muted">Total Amount Received Here</small></dd>
+                                </dl>
+
+                                <dl class="row">
+                                    <dt class="col-sm-6 text-right alert-dark">Invoice Balance</dt>
+                                    <dd class="col-sm-3 text-right"><small class="text-muted">Invoice Balance Here</small></dd>
+                                </dl>
+                            </div>
+            </div>
+
+            <script src="./jquery/jquery-3.4.1.slim.min.js"></script>
+            <script src="./bootstrap/bootstrap.bundle.js"></script>
+</body>
