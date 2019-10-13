@@ -9,10 +9,13 @@ namespace Moneybags
     public partial class InvoiceCreator : MetroFramework.Forms.MetroForm
     {
 
-        public InvoiceCreator()
+        public InvoiceCreator(bool personaLoaded)
         {
             InitializeComponent();
-            PrefillDataFromLoadedPersona();
+            if (personaLoaded)
+            {
+                PrefillDataFromLoadedPersona();
+            }
             tabControl.SelectedIndex = 0;
             invoiceSuccessLabel.Visible = false;
         }

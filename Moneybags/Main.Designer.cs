@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.welcomeLabel = new MetroFramework.Controls.MetroLabel();
             this.metroStyleExtender1 = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.createNewInvoicePictureBox = new System.Windows.Forms.PictureBox();
@@ -36,6 +37,7 @@
             this.createNewInvoiceLabel = new System.Windows.Forms.Label();
             this.choosePersonaLabel = new System.Windows.Forms.Label();
             this.choosePersonaPictureBox = new System.Windows.Forms.PictureBox();
+            this.aboutLabel = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.createNewInvoicePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.choosePersonaPictureBox)).BeginInit();
@@ -59,7 +61,7 @@
             this.createNewInvoicePictureBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.createNewInvoicePictureBox.Image = global::Moneybags.Properties.Resources.newinvoiceicon;
             this.createNewInvoicePictureBox.Location = new System.Drawing.Point(31, 135);
-            this.createNewInvoicePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createNewInvoicePictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.createNewInvoicePictureBox.Name = "createNewInvoicePictureBox";
             this.createNewInvoicePictureBox.Size = new System.Drawing.Size(420, 390);
             this.createNewInvoicePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,7 +99,7 @@
             // 
             this.choosePersonaPictureBox.Image = global::Moneybags.Properties.Resources.choosepersonaicon1;
             this.choosePersonaPictureBox.Location = new System.Drawing.Point(465, 135);
-            this.choosePersonaPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.choosePersonaPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.choosePersonaPictureBox.Name = "choosePersonaPictureBox";
             this.choosePersonaPictureBox.Size = new System.Drawing.Size(420, 390);
             this.choosePersonaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -105,18 +107,30 @@
             this.choosePersonaPictureBox.TabStop = false;
             this.choosePersonaPictureBox.Click += new System.EventHandler(this.ChoosePersonaPictureBox_Click);
             // 
+            // aboutLabel
+            // 
+            this.aboutLabel.AutoSize = true;
+            this.aboutLabel.Location = new System.Drawing.Point(839, 79);
+            this.aboutLabel.Name = "aboutLabel";
+            this.aboutLabel.Size = new System.Drawing.Size(46, 20);
+            this.aboutLabel.TabIndex = 5;
+            this.aboutLabel.Text = "About";
+            this.aboutLabel.Click += new System.EventHandler(this.AboutLabel_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 566);
+            this.Controls.Add(this.aboutLabel);
             this.Controls.Add(this.choosePersonaLabel);
             this.Controls.Add(this.createNewInvoiceLabel);
             this.Controls.Add(this.choosePersonaPictureBox);
             this.Controls.Add(this.createNewInvoicePictureBox);
             this.Controls.Add(this.welcomeLabel);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Welcome to Moneybags";
@@ -137,6 +151,7 @@
         private System.Windows.Forms.Label createNewInvoiceLabel;
         private System.Windows.Forms.Label choosePersonaLabel;
         private System.Windows.Forms.PictureBox createNewInvoicePictureBox;
+        private MetroFramework.Controls.MetroLabel aboutLabel;
     }
 }
 

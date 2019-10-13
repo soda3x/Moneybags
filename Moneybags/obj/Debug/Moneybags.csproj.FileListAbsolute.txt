@@ -32,3 +32,5 @@ C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\obj\Debug\Moneybags.exe
 C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\obj\Debug\Moneybags.pdb
 C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\IronPdf.dll
 C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\IronPdf.xml
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\IronPdf.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\IronPdf.xml

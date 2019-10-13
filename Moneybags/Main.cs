@@ -28,16 +28,19 @@ namespace Moneybags
                 }
                 if (!File.Exists(path))
                 {
-                    MessageBox.Show("Could not find Persona file at: " + fileInfo.FullName +"\nPress OK to start without it");
+                    MessageBox.Show("Could not find Persona file at: " + fileInfo.FullName + "\nPress OK to start without it");
                     File.Delete(@".\currentuser");
                     Application.Restart();
                 }
+                else
+                {
                     FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
                     IFormatter formatter = new BinaryFormatter();
                     Persona loadedPersona = (Persona)formatter.Deserialize(stream);
                     this.Text = "Welcome back, " + loadedPersona.FirstName;
                     welcomeLabel.Text = "What would you like to do?";
                     choosePersonaLabel.Text = "Choose Persona";
+                }
             }
             else
             {
@@ -47,9 +50,27 @@ namespace Moneybags
 
         private void CreateNewInvoicePictureBox_Click(object sender, EventArgs e)
         {
-            InvoiceCreator invoiceCreator = new InvoiceCreator();
-            invoiceCreator.Show();
-            invoiceCreator.MinimumSize = invoiceCreator.Size;
+            FileInfo fileInfo = new FileInfo(@".\currentuser");
+            if (fileInfo.Exists)
+            {
+                string path = "";
+                using (StreamReader streamReader = fileInfo.OpenText())
+                {
+                    path = streamReader.ReadLine();
+                }
+                if (!File.Exists(path))
+                {
+                    InvoiceCreator invoiceCreator = new InvoiceCreator(false);
+                    invoiceCreator.Show();
+                    invoiceCreator.MinimumSize = invoiceCreator.Size;
+                }
+                else
+                {
+                    InvoiceCreator invoiceCreator = new InvoiceCreator(true);
+                    invoiceCreator.Show();
+                    invoiceCreator.MinimumSize = invoiceCreator.Size;
+                }
+            }
         }
 
         private void ChoosePersonaPictureBox_Click(object sender, EventArgs e)
@@ -58,6 +79,11 @@ namespace Moneybags
             personaCreator.Show();
             personaCreator.MinimumSize = personaCreator.Size;
             personaCreator.MaximumSize = personaCreator.Size;
+        }
+
+        private void AboutLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Moneybags\nVersion 0.1.7\n\n\nCreated by Bradley Newman");
         }
     }
 }
