@@ -25,7 +25,7 @@ namespace Moneybags
             fileInfo.CopyTo("./HTML/Output.html");
         }
 
-        public void GenerateHTMLFile(Dictionary<string, string> inputDict)
+        public bool GenerateHTMLFile(Dictionary<string, string> inputDict)
         {
             string content = File.ReadAllText("./HTML/Output.html");
             content = content.Replace("{FIRST_NAME}", inputDict["FIRST_NAME"]);
@@ -74,25 +74,9 @@ namespace Moneybags
 
             File.WriteAllText("./HTML/Output.html", content);
 
-            var Renderer = new IronPdf.HtmlToPdf();
-            var pdf = Renderer.RenderHTMLFileAsPdf("./HTML/Output.html");
+            PDFCreator pdfCreator = new PDFCreator("./HTML/Output.html", inputDict);
+            return pdfCreator.GeneratePDFFile();
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                Filter = "PDF (*.pdf)|*.pdf",
-                RestoreDirectory = true,
-                Title = "Choose a location to save your report",
-                FileName = "TaxInvoice" + inputDict["FIRST_NAME"] + inputDict["LAST_NAME"] + DateTime.Now.ToString("yyyyMMdd"),
-                DefaultExt = "pdf",
-                CheckPathExists = true,
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-            };
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pdf.SaveAs(saveFileDialog.FileName);
-                Process.Start(saveFileDialog.FileName);
-            }
         }
     }
 }

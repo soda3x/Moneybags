@@ -75,19 +75,29 @@ namespace Moneybags
         {
             invoiceSuccessLabel.Visible = false;
             Persona persona = this.GetLoadedPersona();
-            Dictionary<string, string> dict = new Dictionary<string, string>();
-            dict.Add("FIRST_NAME", persona.FirstName);
-            dict.Add("LAST_NAME", persona.LastName);
-            dict.Add("ABN", persona.ABN.ToString());
-            dict.Add("POSTAL_LINE_1", persona.PostalAddressLine1);
-            dict.Add("POSTAL_LINE_2", persona.PostalAddressLine2);
-            dict.Add("DATE", DateTime.Now.ToShortDateString());
-            dict.Add("ADDR_LINE_1", persona.AddressLine1);
-            dict.Add("ADDR_LINE_2", persona.AddressLine2);
+            Dictionary<string, string> dict = new Dictionary<string, string>
+            {
+                { "FIRST_NAME", persona.FirstName },
+                { "LAST_NAME", persona.LastName },
+                { "ABN", persona.ABN.ToString() },
+                { "POSTAL_LINE_1", persona.PostalAddressLine1 },
+                { "POSTAL_LINE_2", persona.PostalAddressLine2 },
+                { "DATE", DateTime.Now.ToShortDateString() },
+                { "ADDR_LINE_1", persona.AddressLine1 },
+                { "ADDR_LINE_2", persona.AddressLine2 }
+            };
 
             HTMLCreator htmlCreator = new HTMLCreator("./HTML/pdf_template.html", this.itemsListView);
-            htmlCreator.GenerateHTMLFile(dict);
-            invoiceSuccessLabel.Visible = true;
+            if (htmlCreator.GenerateHTMLFile(dict))
+            {
+                invoiceSuccessLabel.Text = "Invoice was successfully created.";
+                invoiceSuccessLabel.Visible = true;
+            } else
+            {
+                invoiceSuccessLabel.Text = "Invoice could not be created.";
+                invoiceSuccessLabel.Visible = true;
+            }
+            
         }
     }
 }

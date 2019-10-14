@@ -34,3 +34,11 @@ C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug
 C:\Users\bnewm\OneDrive\Documents\GitHub\Moneybags\Moneybags\Moneybags\bin\Debug\IronPdf.xml
 C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\IronPdf.dll
 C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\IronPdf.xml
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\libeay32.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\libgcc_s_dw2-1.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\mingwm10.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\ssleay32.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\wkhtmltox0.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\Common.Logging.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\Pechkin.dll
+C:\Users\Brad\Documents\GitHub\Moneybags\Moneybags\bin\Debug\Pechkin.Synchronized.dll
