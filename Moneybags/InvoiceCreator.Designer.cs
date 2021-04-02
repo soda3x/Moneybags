@@ -51,6 +51,9 @@
             this.firstNameTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.addItemsPage = new MetroFramework.Controls.MetroTabPage();
+            this.invoiceSuccessLabel = new System.Windows.Forms.Label();
+            this.saveIncompleteBtn = new MetroFramework.Controls.MetroButton();
+            this.loadIncompleteBtn = new MetroFramework.Controls.MetroButton();
             this.removeItemBtn = new MetroFramework.Controls.MetroButton();
             this.createInvoiceBtn = new MetroFramework.Controls.MetroButton();
             this.itemsListView = new System.Windows.Forms.ListView();
@@ -61,9 +64,6 @@
             this.gst = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addItemBtn = new MetroFramework.Controls.MetroButton();
-            this.loadIncompleteBtn = new MetroFramework.Controls.MetroButton();
-            this.saveIncompleteBtn = new MetroFramework.Controls.MetroButton();
-            this.invoiceSuccessLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.basicDetailsPage.SuspendLayout();
             this.addItemsPage.SuspendLayout();
@@ -301,6 +301,41 @@
             this.addItemsPage.Text = "02 Create / Edit Invoice";
             this.addItemsPage.VerticalScrollbarBarColor = true;
             // 
+            // invoiceSuccessLabel
+            // 
+            this.invoiceSuccessLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.invoiceSuccessLabel.AutoSize = true;
+            this.invoiceSuccessLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.invoiceSuccessLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceSuccessLabel.Location = new System.Drawing.Point(3, 745);
+            this.invoiceSuccessLabel.Name = "invoiceSuccessLabel";
+            this.invoiceSuccessLabel.Size = new System.Drawing.Size(80, 17);
+            this.invoiceSuccessLabel.TabIndex = 10;
+            this.invoiceSuccessLabel.Text = "Status Label";
+            // 
+            // saveIncompleteBtn
+            // 
+            this.saveIncompleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveIncompleteBtn.Location = new System.Drawing.Point(148, 764);
+            this.saveIncompleteBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.saveIncompleteBtn.Name = "saveIncompleteBtn";
+            this.saveIncompleteBtn.Size = new System.Drawing.Size(140, 33);
+            this.saveIncompleteBtn.TabIndex = 9;
+            this.saveIncompleteBtn.Text = "Save Invoice";
+            this.saveIncompleteBtn.Click += new System.EventHandler(this.SaveIncompleteInvoiceBtn_Click);
+            // 
+            // loadIncompleteBtn
+            // 
+            this.loadIncompleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.loadIncompleteBtn.Location = new System.Drawing.Point(4, 764);
+            this.loadIncompleteBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loadIncompleteBtn.Name = "loadIncompleteBtn";
+            this.loadIncompleteBtn.Size = new System.Drawing.Size(140, 33);
+            this.loadIncompleteBtn.TabIndex = 8;
+            this.loadIncompleteBtn.Text = "Load Invoice";
+            this.loadIncompleteBtn.Click += new System.EventHandler(this.LoadIncompleteInvoiceBtn_Click);
+            // 
             // removeItemBtn
             // 
             this.removeItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -344,6 +379,7 @@
             this.itemsListView.TabIndex = 5;
             this.itemsListView.UseCompatibleStateImageBehavior = false;
             this.itemsListView.View = System.Windows.Forms.View.Details;
+            this.itemsListView.DoubleClick += new System.EventHandler(this.ItemsListView_DoubleClick);
             // 
             // itemCode
             // 
@@ -379,41 +415,6 @@
             this.addItemBtn.TabIndex = 3;
             this.addItemBtn.Text = "Add Item";
             this.addItemBtn.Click += new System.EventHandler(this.AddItemBtn_Click);
-            // 
-            // loadIncompleteBtn
-            // 
-            this.loadIncompleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.loadIncompleteBtn.Location = new System.Drawing.Point(4, 764);
-            this.loadIncompleteBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.loadIncompleteBtn.Name = "loadIncompleteBtn";
-            this.loadIncompleteBtn.Size = new System.Drawing.Size(140, 33);
-            this.loadIncompleteBtn.TabIndex = 8;
-            this.loadIncompleteBtn.Text = "Load Incomplete Invoice";
-            this.loadIncompleteBtn.Click += new System.EventHandler(this.LoadIncompleteInvoiceBtn_Click);
-            // 
-            // saveIncompleteBtn
-            // 
-            this.saveIncompleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveIncompleteBtn.Location = new System.Drawing.Point(148, 764);
-            this.saveIncompleteBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.saveIncompleteBtn.Name = "saveIncompleteBtn";
-            this.saveIncompleteBtn.Size = new System.Drawing.Size(140, 33);
-            this.saveIncompleteBtn.TabIndex = 9;
-            this.saveIncompleteBtn.Text = "Save Incomplete Invoice";
-            this.saveIncompleteBtn.Click += new System.EventHandler(this.SaveIncompleteInvoiceBtn_Click);
-            // 
-            // invoiceSuccessLabel
-            // 
-            this.invoiceSuccessLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.invoiceSuccessLabel.AutoSize = true;
-            this.invoiceSuccessLabel.BackColor = System.Drawing.Color.Gainsboro;
-            this.invoiceSuccessLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceSuccessLabel.Location = new System.Drawing.Point(3, 745);
-            this.invoiceSuccessLabel.Name = "invoiceSuccessLabel";
-            this.invoiceSuccessLabel.Size = new System.Drawing.Size(80, 17);
-            this.invoiceSuccessLabel.TabIndex = 10;
-            this.invoiceSuccessLabel.Text = "Status Label";
             // 
             // InvoiceCreator
             // 

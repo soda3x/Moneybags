@@ -58,10 +58,10 @@ namespace Moneybags
 
         private void AddItemBtn_Click(object sender, EventArgs e)
         {
-            ItemCreator itemCreator = new ItemCreator(this.itemsListView);
+            ItemCreator itemCreator = new ItemCreator(this.itemsListView, false);
             itemCreator.MinimumSize = itemCreator.Size;
             itemCreator.MaximumSize = itemCreator.Size;
-            itemCreator.Show();
+            itemCreator.ShowDialog();
         }
 
         private void RemoveItemBtn_Click(object sender, EventArgs e)
@@ -73,6 +73,18 @@ namespace Moneybags
                     this.itemsListView.Items[i].Remove();
                     --i;
                 }
+            }
+        }
+
+        private void ItemsListView_DoubleClick(object sender, EventArgs e)
+        {
+            // Check if Selected Items count > 0 to avoid ArgumentOutOfRange Exception being thrown later
+            if (this.itemsListView.SelectedItems.Count > 0)
+            {
+                ItemCreator itemCreator = new ItemCreator(this.itemsListView, true);
+                itemCreator.MinimumSize = itemCreator.Size;
+                itemCreator.MaximumSize = itemCreator.Size;
+                itemCreator.ShowDialog();
             }
         }
 
@@ -91,6 +103,8 @@ namespace Moneybags
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                // Clear any items from the invoice before loading from file
+                this.itemsListView.Items.Clear();
                 string invoiceString = File.ReadAllText(openFileDialog.FileName).Trim();
                 string[] invoiceItemsStr = invoiceString.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 

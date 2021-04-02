@@ -44,11 +44,11 @@
             this.postal1TB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.saveAndUsePersonaBtn = new MetroFramework.Controls.MetroButton();
-            this.savePersonaToFileBtn = new MetroFramework.Controls.MetroButton();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.accountNumberTB = new MetroFramework.Controls.MetroTextBox();
             this.bsbTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.usePersonaBtn = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // loadPersonaFromFileBtn
@@ -181,15 +181,6 @@
             this.saveAndUsePersonaBtn.Text = "Save and Use as Active Persona";
             this.saveAndUsePersonaBtn.Click += new System.EventHandler(this.SaveAndUsePersonaBtn_Click);
             // 
-            // savePersonaToFileBtn
-            // 
-            this.savePersonaToFileBtn.Location = new System.Drawing.Point(242, 369);
-            this.savePersonaToFileBtn.Name = "savePersonaToFileBtn";
-            this.savePersonaToFileBtn.Size = new System.Drawing.Size(171, 23);
-            this.savePersonaToFileBtn.TabIndex = 16;
-            this.savePersonaToFileBtn.Text = "Save Persona to File";
-            this.savePersonaToFileBtn.Click += new System.EventHandler(this.SavePersonaToFileBtn_Click);
-            // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
@@ -222,6 +213,15 @@
             this.metroLabel9.TabIndex = 20;
             this.metroLabel9.Text = "BSB";
             // 
+            // usePersonaBtn
+            // 
+            this.usePersonaBtn.Location = new System.Drawing.Point(242, 369);
+            this.usePersonaBtn.Name = "usePersonaBtn";
+            this.usePersonaBtn.Size = new System.Drawing.Size(171, 23);
+            this.usePersonaBtn.TabIndex = 16;
+            this.usePersonaBtn.Text = "Use as Active Persona";
+            this.usePersonaBtn.Click += new System.EventHandler(this.SavePersonaToFileBtn_Click);
+            // 
             // PersonaCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,7 +231,7 @@
             this.Controls.Add(this.bsbTB);
             this.Controls.Add(this.accountNumberTB);
             this.Controls.Add(this.metroLabel8);
-            this.Controls.Add(this.savePersonaToFileBtn);
+            this.Controls.Add(this.usePersonaBtn);
             this.Controls.Add(this.saveAndUsePersonaBtn);
             this.Controls.Add(this.postal2TB);
             this.Controls.Add(this.metroLabel6);
@@ -273,10 +273,10 @@
         private MetroFramework.Controls.MetroTextBox postal1TB;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroButton saveAndUsePersonaBtn;
-        private MetroFramework.Controls.MetroButton savePersonaToFileBtn;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroTextBox accountNumberTB;
         private MetroFramework.Controls.MetroTextBox bsbTB;
         private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroButton usePersonaBtn;
     }
 }

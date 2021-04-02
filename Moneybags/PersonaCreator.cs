@@ -21,7 +21,6 @@ namespace Moneybags
             {
                 path = filePath
             };
-
             return newPersona;
         }
 
@@ -67,27 +66,6 @@ namespace Moneybags
                 stream.Close();
             }
             Application.Restart();
-        }
-
-        private void SavePersonaToFileBtn_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                Filter = "Moneybags Persona (*.mbpersona)|*.mbpersona",
-                RestoreDirectory = true,
-                Title = "Choose a location to save your new Persona",
-                DefaultExt = "mbpersona",
-                CheckPathExists = true,
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-            };
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                IFormatter formatter = new BinaryFormatter();
-                Stream stream = new FileStream(saveFileDialog.FileName, FileMode.Create, FileAccess.Write);
-                formatter.Serialize(stream, this.CreatePersona(saveFileDialog.FileName));
-                stream.Close();
-            }
         }
 
         private void PrefillDataFromLoadedPersona()
@@ -138,6 +116,11 @@ namespace Moneybags
                 SetAsActivePersona(loadedPersona);
                 PrefillDataFromLoadedPersona();
             }
+        }
+
+        private void SavePersonaToFileBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
