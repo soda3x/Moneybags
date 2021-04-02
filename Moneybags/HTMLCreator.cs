@@ -21,7 +21,6 @@ namespace Moneybags
             {
                 File.Delete(@"./HTML/Output.html");
             }
-
             fileInfo.CopyTo("./HTML/Output.html");
         }
 
@@ -43,18 +42,29 @@ namespace Moneybags
             List<string> rows = new List<string>();
             double gst = 0;
             double total = 0;
+
+            const int ITEM_CODE = 0;
+            const int DESC = 1;
+            const int UNIT_PRICE = 2;
+            const int QTY = 3;
+            const int GST = 4;
+            const int TOTAL = 5;
+
             foreach (ListViewItem item in this.ListView.Items)
             {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.Append("<tr>\n");
-                stringBuilder.Append("<td>" + item.SubItems[0].Text + "</td>\n");
-                stringBuilder.Append("<td>" + item.SubItems[1].Text + "</td>\n");
-                stringBuilder.Append("<td>" + item.SubItems[2].Text + "</td>\n");
-                stringBuilder.Append("<td>" + item.SubItems[3].Text + "</td>\n");
-                stringBuilder.Append("<td>" + item.SubItems[4].Text + "</td>\n");
-                gst += Convert.ToDouble(item.SubItems[4].Text);
-                stringBuilder.Append("<td>" + item.SubItems[5].Text + "</td>\n");
-                total += Convert.ToDouble(item.SubItems[5].Text);
+                stringBuilder.Append("<td>" + item.SubItems[ITEM_CODE].Text + "</td>\n");
+                stringBuilder.Append("<td>" + item.SubItems[DESC].Text + "</td>\n");
+                stringBuilder.Append("<td>" + item.SubItems[UNIT_PRICE].Text + "</td>\n");
+                stringBuilder.Append("<td>" + item.SubItems[QTY].Text + "</td>\n");
+
+                stringBuilder.Append("<td>" + item.SubItems[GST].Text + "</td>\n");
+                gst += Convert.ToDouble(item.SubItems[GST].Text);
+
+                stringBuilder.Append("<td>" + item.SubItems[TOTAL].Text + "</td>\n");
+                total += Convert.ToDouble(item.SubItems[TOTAL].Text);
+
                 stringBuilder.Append("</tr>\n");
                 rows.Add(stringBuilder.ToString());
             }
@@ -78,7 +88,6 @@ namespace Moneybags
 
             PDFCreator pdfCreator = new PDFCreator("./HTML/Output.html", inputDict);
             return pdfCreator.GeneratePDFFile();
-
         }
     }
 }
