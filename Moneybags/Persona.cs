@@ -8,13 +8,15 @@ namespace Moneybags
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public long ABN { get; set; }
+        public long AccountNumber { get; set; }
+        public long BSB { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string PostalAddressLine1 { get; set; }
         public string PostalAddressLine2 { get; set; }
         public string path { get; set; }
 
-        public Persona(string firstName, string lastName, long ABN, string addressLine1, string addressLine2, string postalAddressLine1, string postalAddressLine2)
+        public Persona(string firstName, string lastName, long ABN, string addressLine1, string addressLine2, string postalAddressLine1, string postalAddressLine2, long accountNumber, long bsb)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -23,6 +25,8 @@ namespace Moneybags
             this.AddressLine2 = addressLine2;
             this.PostalAddressLine1 = postalAddressLine1;
             this.PostalAddressLine2 = postalAddressLine2;
+            this.AccountNumber = accountNumber;
+            this.BSB = bsb;
         }
 
         public void SetPath(string filePath)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
@@ -83,7 +84,8 @@ namespace Moneybags
 
         private void AboutLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Moneybags\nVersion 0.1.7\n\n\nCreated by Bradley Newman");
+            String version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            MessageBox.Show("Moneybags\nVersion " + version + "\n\n\nCreated by Bradley Newman");
         }
     }
 }

@@ -30,6 +30,8 @@ namespace Moneybags
             addr2TB.Text = loadedPersona.AddressLine2;
             postalAddr1TB.Text = loadedPersona.PostalAddressLine1;
             postalAddr2TB.Text = loadedPersona.PostalAddressLine2;
+            accountNumberTB.Text = loadedPersona.AccountNumber.ToString();
+            bsbTB.Text = loadedPersona.BSB.ToString();
         }
 
         private Persona GetLoadedPersona()
@@ -84,7 +86,9 @@ namespace Moneybags
                 { "POSTAL_LINE_2", persona.PostalAddressLine2 },
                 { "DATE", DateTime.Now.ToShortDateString() },
                 { "ADDR_LINE_1", persona.AddressLine1 },
-                { "ADDR_LINE_2", persona.AddressLine2 }
+                { "ADDR_LINE_2", persona.AddressLine2 },
+                { "ACCOUNT_NO", persona.AccountNumber.ToString() },
+                { "BSB", persona.BSB.ToString() }
             };
 
             HTMLCreator htmlCreator = new HTMLCreator("./HTML/pdf_template.html", this.itemsListView);

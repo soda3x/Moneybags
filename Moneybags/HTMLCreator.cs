@@ -36,6 +36,8 @@ namespace Moneybags
             content = content.Replace("{DATE}", inputDict["DATE"]);
             content = content.Replace("{ADDR_LINE_1}", inputDict["ADDR_LINE_1"]);
             content = content.Replace("{ADDR_LINE_2}", inputDict["ADDR_LINE_2"]);
+            content = content.Replace("{ACCOUNT_NO}", inputDict["ACCOUNT_NO"]);
+            content = content.Replace("{BSB}", inputDict["BSB"]);
             File.WriteAllText("./HTML/Output.html", content);
 
             List<string> rows = new List<string>();

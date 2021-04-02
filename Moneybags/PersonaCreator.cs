@@ -17,7 +17,7 @@ namespace Moneybags
         private Persona CreatePersona(string filePath)
         {
             Persona newPersona = new Persona(this.firstNameTB.Text, this.lastNameTB.Text, Convert.ToInt64(this.abnTB.Text),
-                this.addressLine1TB.Text, this.addressLine2TB.Text, this.postal1TB.Text, this.postal2TB.Text)
+                this.addressLine1TB.Text, this.addressLine2TB.Text, this.postal1TB.Text, this.postal2TB.Text, Convert.ToInt64(this.accountNumberTB.Text), Convert.ToInt64(this.bsbTB.Text))
             {
                 path = filePath
             };
@@ -110,6 +110,8 @@ namespace Moneybags
                 addressLine2TB.Text = loadedPersona.AddressLine2;
                 postal1TB.Text = loadedPersona.PostalAddressLine1;
                 postal2TB.Text = loadedPersona.PostalAddressLine2;
+                accountNumberTB.Text = loadedPersona.AccountNumber.ToString();
+                bsbTB.Text = loadedPersona.BSB.ToString();
             }
         }
 
