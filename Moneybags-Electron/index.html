@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <h1 id="title" class="title">Welcome to Moneybags</h1>
+
+        <section class="notification is-warning">
+            <h2 class="subtitle">You will need to create or load a <strong>Persona</strong> before you can begin creating
+                invoices</h2>
+        </section>
+    </section>
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <h2 class="subtitle">Persona Management</h2>
+                <div class="buttons">
+                    <button class="button is-primary" id="btnCreateNewPersona" onclick="showWindow(windowCreatePersona, windowCreatePersonaHeader)">Create New Persona</button>
+                    <button class="button is-link" id="btnLoadPersona">Load Persona File</button>
+                </div>
+            </div>
+            <div class="column">
+                <h2 class="subtitle">Invoice Management</h2>
+                <div class="buttons">
+                    <button disabled class="button is-primary" id="btnCreateNewInvoice">Create New Invoice</button>
+                    <button disabled class="button is-link" id="btnLoadInvoice">Load Invoice from File</button>
+                </div>
+            </div>
+    </section>
+    <div class="section">
+        <div class="columns is-vcentered is-centered" id="windowCreatePersona">
+            <nav class="panel">
+                <div class="message-header" id="windowCreatePersonaHeader">
+                    <p>Create Persona</p>
+                    <button class="delete" aria-label="delete" onclick="hideWindow(windowCreatePersona, windowCreatePersonaHeader)"></button>
+                </div>
+                <div class="panel-block columns is-vcentered is-centered">
+                    <div class="column">
+                        <input class="input" type="text" placeholder="First Name" />
+                    </div>
+                    <div class="column">
+                        <input class="input" type="text" placeholder="Last Name" />
+                    </div>
+                </div>
+
+                <div class="panel-block columns is-centered is-vcentered">
+                    <div class="column">
+                        <input class="input" type="text" placeholder="ABN" />
+                    </div>
+
+                </div>
+
+                <div class="panel-block columns is-vcentered is-centered">
+                    <div class="column">
+                        <input class="input" type="text" placeholder="Address Line 1" />
+                    </div>
+                    <div class="column">
+                        <input class="input" type="text" placeholder="Address Line 2" />
+                    </div>
+                </div>
+
+                <div class="panel-block columns is-vcentered is-centered">
+                    <div class="column">
+                        <input class="input" type="text" placeholder="Postal Address Line 1" />
+                    </div>
+                    <div class="column">
+                        <input class="input" type="text" placeholder="Postal Address Line 2" />
+                    </div>
+                </div>
+
+                <div class="panel-block columns is-vcentered is-centered">
+                    <div class="column">
+                        <input class="input" type="text" placeholder="Account Number" />
+                    </div>
+                    <div class="column">
+                        <input class="input" type="text" placeholder="BSB" />
+                    </div>
+                </div>
+
+                <div class="panel-block columns is-vcentered is-centered">
+                    <div class="column">
+                        <button class="button is-primary is-outlined is-fullwidth">
+                            Create Persona
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Hack to create global exports for TS-->
+    <script> var exports = {};</script>
+
+    <script src="./dist/renderer.js"></script>
+
+</body>
+
+</html>
