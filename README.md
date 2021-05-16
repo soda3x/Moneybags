@@ -8,6 +8,10 @@ This is the electron re-write branch of Moneybags. The future of Moneybags will 
 
 The Electron-rewrite branch of Moneybags uses Electron with TypeScript.
 
+The Electron-rewrite source can be found in the `Moneybags-Electron` folder in the repository.
+
+The C# version of Moneybags can also be found in this branch but may be (and probably is) outdated compared to master.
+
 ### Running Moneybags electron-rewrite
 
 ```sh
