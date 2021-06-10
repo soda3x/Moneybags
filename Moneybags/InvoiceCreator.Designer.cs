@@ -35,7 +35,7 @@
             this.accountNumberTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.lastNameTB = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.lastNameLabel = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.postalAddr2TB = new MetroFramework.Controls.MetroTextBox();
@@ -49,7 +49,7 @@
             this.abnTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.firstNameTB = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.firstNameLabel = new MetroFramework.Controls.MetroLabel();
             this.addItemsPage = new MetroFramework.Controls.MetroTabPage();
             this.invoiceSuccessLabel = new System.Windows.Forms.Label();
             this.saveIncompleteBtn = new MetroFramework.Controls.MetroButton();
@@ -78,7 +78,7 @@
             this.tabControl.Controls.Add(this.addItemsPage);
             this.tabControl.Location = new System.Drawing.Point(24, 64);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 1;
+            this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1202, 839);
             this.tabControl.TabIndex = 0;
             // 
@@ -89,7 +89,7 @@
             this.basicDetailsPage.Controls.Add(this.accountNumberTB);
             this.basicDetailsPage.Controls.Add(this.metroLabel10);
             this.basicDetailsPage.Controls.Add(this.lastNameTB);
-            this.basicDetailsPage.Controls.Add(this.metroLabel9);
+            this.basicDetailsPage.Controls.Add(this.lastNameLabel);
             this.basicDetailsPage.Controls.Add(this.metroLabel8);
             this.basicDetailsPage.Controls.Add(this.metroLabel7);
             this.basicDetailsPage.Controls.Add(this.postalAddr2TB);
@@ -103,7 +103,7 @@
             this.basicDetailsPage.Controls.Add(this.abnTB);
             this.basicDetailsPage.Controls.Add(this.metroLabel2);
             this.basicDetailsPage.Controls.Add(this.firstNameTB);
-            this.basicDetailsPage.Controls.Add(this.metroLabel1);
+            this.basicDetailsPage.Controls.Add(this.firstNameLabel);
             this.basicDetailsPage.HorizontalScrollbarBarColor = true;
             this.basicDetailsPage.Location = new System.Drawing.Point(4, 35);
             this.basicDetailsPage.Name = "basicDetailsPage";
@@ -154,14 +154,14 @@
             this.lastNameTB.TabIndex = 17;
             this.lastNameTB.Text = "Autofill from Persona";
             // 
-            // metroLabel9
+            // lastNameLabel
             // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(20, 117);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(71, 19);
-            this.metroLabel9.TabIndex = 16;
-            this.metroLabel9.Text = "Last Name";
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Location = new System.Drawing.Point(20, 117);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(71, 19);
+            this.lastNameLabel.TabIndex = 16;
+            this.lastNameLabel.Text = "Last Name";
             // 
             // metroLabel8
             // 
@@ -275,14 +275,14 @@
             this.firstNameTB.TabIndex = 3;
             this.firstNameTB.Text = "Autofill from Persona";
             // 
-            // metroLabel1
+            // firstNameLabel
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(20, 88);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(73, 19);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "First Name";
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Location = new System.Drawing.Point(20, 88);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(73, 19);
+            this.firstNameLabel.TabIndex = 2;
+            this.firstNameLabel.Text = "First Name";
             // 
             // addItemsPage
             // 
@@ -441,7 +441,7 @@
         private MetroFramework.Controls.MetroTextBox abnTB;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox firstNameTB;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel firstNameLabel;
         private MetroFramework.Controls.MetroTextBox addr2TB;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox addr1TB;
@@ -462,7 +462,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroTextBox lastNameTB;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel lastNameLabel;
         private MetroFramework.Controls.MetroTextBox bsbTB;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox accountNumberTB;

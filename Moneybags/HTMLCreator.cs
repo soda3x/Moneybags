@@ -29,7 +29,17 @@ namespace Moneybags
             string content = File.ReadAllText("./HTML/Output.html");
             content = content.Replace("{FIRST_NAME}", inputDict["FIRST_NAME"]);
             content = content.Replace("{LAST_NAME}", inputDict["LAST_NAME"]);
-            content = content.Replace("{ABN}", inputDict["ABN"]);
+
+            // If ABN field is empty then don't render it in the Invoice
+            if (inputDict["ABN"].Equals(""))
+            {
+                content = content.Replace("{ABN}", "");
+                content = content.Replace("ABN", "");
+            }
+            else
+            {
+                content = content.Replace("{ABN}", inputDict["ABN"]);
+            }
             content = content.Replace("{POSTAL_LINE_1}", inputDict["POSTAL_LINE_1"]);
             content = content.Replace("{POSTAL_LINE_2}", inputDict["POSTAL_LINE_2"]);
             content = content.Replace("{DATE}", inputDict["DATE"]);

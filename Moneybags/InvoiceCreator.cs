@@ -25,8 +25,21 @@ namespace Moneybags
         private void PrefillDataFromLoadedPersona()
         {
             Persona loadedPersona = this.GetLoadedPersona();
+            if (loadedPersona.IsBusiness)
+            {
+                firstNameLabel.Text = "Business Name";
+                lastNameTB.Text = "";
+                lastNameTB.Visible = false;
+                lastNameLabel.Visible = false;
+            }
+            else
+            {
+                firstNameLabel.Text = "First Name";
+                lastNameTB.Visible = true;
+                lastNameLabel.Visible = true;
+                lastNameTB.Text = loadedPersona.LastName;
+            }
             firstNameTB.Text = loadedPersona.FirstName;
-            lastNameTB.Text = loadedPersona.LastName;
             abnTB.Text = loadedPersona.ABN.ToString();
             addr1TB.Text = loadedPersona.AddressLine1;
             addr2TB.Text = loadedPersona.AddressLine2;
@@ -162,6 +175,10 @@ namespace Moneybags
         {
             invoiceSuccessLabel.Visible = false;
             Persona persona = this.GetLoadedPersona();
+            if (persona.IsBusiness)
+            {
+                persona.LastName = "";
+            }
             Dictionary<string, string> dict = new Dictionary<string, string>
             {
                 { "FIRST_NAME", persona.FirstName },

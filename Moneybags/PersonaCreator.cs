@@ -17,7 +17,9 @@ namespace Moneybags
         private Persona CreatePersona(string filePath)
         {
             Persona newPersona = new Persona(this.firstNameTB.Text, this.lastNameTB.Text, this.abnTB.Text,
-                this.addressLine1TB.Text, this.addressLine2TB.Text, this.postal1TB.Text, this.postal2TB.Text, this.accountNumberTB.Text, this.bsbTB.Text)
+                this.addressLine1TB.Text, this.addressLine2TB.Text, this.postal1TB.Text, this.postal2TB.Text,
+                this.accountNumberTB.Text, this.bsbTB.Text, this.useBusinessNameCheckBox.Checked,
+                this.useSameAddressCheckBox.Checked)
             {
                 path = filePath
             };
@@ -42,6 +44,7 @@ namespace Moneybags
                     streamWriter.WriteLine(persona.path);
                 }
             }
+            Application.Restart();
         }
 
         private void SaveAndUsePersonaBtn_Click(object sender, EventArgs e)
@@ -90,6 +93,8 @@ namespace Moneybags
                 postal2TB.Text = loadedPersona.PostalAddressLine2;
                 accountNumberTB.Text = loadedPersona.AccountNumber.ToString();
                 bsbTB.Text = loadedPersona.BSB.ToString();
+                useSameAddressCheckBox.Checked = loadedPersona.UseSameAddress;
+                useBusinessNameCheckBox.Checked = loadedPersona.IsBusiness;
             }
         }
 
@@ -122,6 +127,42 @@ namespace Moneybags
                     string title = "Moneybags - Could not load Persona";
                     MessageBox.Show(message, title);
                 }
+            }
+        }
+
+        private void useSameAddressCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (useSameAddressCheckBox.Checked)
+            {
+                postal1TB.Text = addressLine1TB.Text;
+                postal2TB.Text = addressLine2TB.Text;
+                postal1TB.Enabled = false;
+                postal2TB.Enabled = false;
+            }
+            else
+            {
+                postal1TB.Text = "";
+                postal2TB.Text = "";
+                postal1TB.Enabled = true;
+                postal2TB.Enabled = true;
+            }
+        }
+
+        private void useBusinessNameCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (useBusinessNameCheckBox.Checked)
+            {
+                firstNameLabel.Text = "Business Name";
+                lastNameLabel.Visible = false;
+                lastNameTB.Text = "";
+                lastNameTB.Visible = false;
+            }
+            else
+            {
+                firstNameLabel.Text = "First Name";
+                lastNameLabel.Visible = true;
+                lastNameTB.Text = "";
+                lastNameTB.Visible = true;
             }
         }
     }

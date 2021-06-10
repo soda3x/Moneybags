@@ -27,7 +27,7 @@ namespace Moneybags
                 fileStream.Write(byteArray, 0, byteArray.Length);
                 fileStream.Close();
                 return true;
-            } catch (Exception ex)
+            } catch (Exception)
             {
                 return false;
             }

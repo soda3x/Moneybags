@@ -24,8 +24,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.3.0.%2a</ApplicationVersion>
+    <ApplicationVersion>0.3.1.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -49,6 +50,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>money_bag_1f4b0_Mdj_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DD60F13129BA1537A91DB63FEC6337C6D02AFC4A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Moneybags_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging, Version=2.1.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
@@ -117,6 +130,12 @@
     <Compile Include="RoundedPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UpdateAvailableDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAvailableDialog.Designer.cs">
+      <DependentUpon>UpdateAvailableDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InvoiceCreator.resx">
       <DependentUpon>InvoiceCreator.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +158,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UpdateAvailableDialog.resx">
+      <DependentUpon>UpdateAvailableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Moneybags_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

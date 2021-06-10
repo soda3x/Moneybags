@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -15,6 +16,7 @@ namespace Moneybags
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
             PersonaliseLogin();
+            CheckForUpdates();
         }
 
         private void PersonaliseLogin()
@@ -86,6 +88,30 @@ namespace Moneybags
         {
             String version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             MessageBox.Show("Moneybags\nVersion " + version + "\n\n\nCreated by Bradley Newman");
+        }
+
+        private void CheckForUpdates()
+        {
+            string ourVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string latestVersionString = String.Empty;
+            WebClient wc = new WebClient();
+
+            // Add headers to impersonate a web browser. Some web sites 
+            // will not respond correctly without these headers
+            wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12");
+            wc.Headers.Add("Accept", "*/*");
+            wc.Headers.Add("Accept-Language", "en-gb,en;q=0.5");
+            wc.Headers.Add("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
+
+            latestVersionString = wc.DownloadString("https://raw.githubusercontent.com/soda3x/Moneybags/master/version.txt");
+
+            var checkedVersion = new Version(latestVersionString);
+            var currentVersion = new Version(ourVersion);
+            var result = checkedVersion.CompareTo(currentVersion);
+            if (result > 0)
+            {
+                new UpdateAvailableDialog(ourVersion, latestVersionString).ShowDialog();
+            }
         }
     }
 }
