@@ -7,16 +7,16 @@ namespace Moneybags
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public long ABN { get; set; }
-        public long AccountNumber { get; set; }
-        public long BSB { get; set; }
+        public string ABN { get; set; }
+        public string AccountNumber { get; set; }
+        public string BSB { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string PostalAddressLine1 { get; set; }
         public string PostalAddressLine2 { get; set; }
         public string path { get; set; }
 
-        public Persona(string firstName, string lastName, long ABN, string addressLine1, string addressLine2, string postalAddressLine1, string postalAddressLine2, long accountNumber, long bsb)
+        public Persona(string firstName, string lastName, string ABN, string addressLine1, string addressLine2, string postalAddressLine1, string postalAddressLine2, string accountNumber, string bsb)
         {
             this.FirstName = firstName;
             this.LastName = lastName;

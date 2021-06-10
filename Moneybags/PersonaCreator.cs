@@ -16,8 +16,8 @@ namespace Moneybags
 
         private Persona CreatePersona(string filePath)
         {
-            Persona newPersona = new Persona(this.firstNameTB.Text, this.lastNameTB.Text, Convert.ToInt64(this.abnTB.Text),
-                this.addressLine1TB.Text, this.addressLine2TB.Text, this.postal1TB.Text, this.postal2TB.Text, Convert.ToInt64(this.accountNumberTB.Text), Convert.ToInt64(this.bsbTB.Text))
+            Persona newPersona = new Persona(this.firstNameTB.Text, this.lastNameTB.Text, this.abnTB.Text,
+                this.addressLine1TB.Text, this.addressLine2TB.Text, this.postal1TB.Text, this.postal2TB.Text, this.accountNumberTB.Text, this.bsbTB.Text)
             {
                 path = filePath
             };
@@ -93,8 +93,6 @@ namespace Moneybags
             }
         }
 
-
-
         private void LoadPersonaFromFileBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -112,15 +110,19 @@ namespace Moneybags
             {
                 FileStream stream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
                 IFormatter formatter = new BinaryFormatter();
-                Persona loadedPersona = (Persona)formatter.Deserialize(stream);
-                SetAsActivePersona(loadedPersona);
-                PrefillDataFromLoadedPersona();
+                try
+                {
+                    Persona loadedPersona = (Persona)formatter.Deserialize(stream);
+                    SetAsActivePersona(loadedPersona);
+                    PrefillDataFromLoadedPersona();
+                }
+                catch (ArgumentException)
+                {
+                    string message = "The Persona you are attempting to open may have been made with an earlier version of Moneybags. Please use a different Persona.";
+                    string title = "Moneybags - Could not load Persona";
+                    MessageBox.Show(message, title);
+                }
             }
-        }
-
-        private void SavePersonaToFileBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

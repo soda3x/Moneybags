@@ -220,7 +220,6 @@
             this.usePersonaBtn.Size = new System.Drawing.Size(171, 23);
             this.usePersonaBtn.TabIndex = 16;
             this.usePersonaBtn.Text = "Use as Active Persona";
-            this.usePersonaBtn.Click += new System.EventHandler(this.SavePersonaToFileBtn_Click);
             // 
             // PersonaCreator
             // 
