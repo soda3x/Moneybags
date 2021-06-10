@@ -5,7 +5,7 @@ Moneybags is an open-source cashflow management system used for creating tax inv
 Currently Moneybags is only available for Windows.
 
 ### Latest release
-[v0.3-alpha](https://github.com/soda3x/Moneybags/releases/tag/v0.3-alpha)
+[v0.3.1-alpha](https://github.com/soda3x/Moneybags/releases/tag/v0.3.1-alpha)
 
 ### Using Moneybags
 Create a Persona (.mbpersona file) and never worry about having to enter basic details like your name or ABN or postal address again with the `Persona Creator`. After doing that, head over to the `Invoice Creator` to begin. It's straightforward from there!
