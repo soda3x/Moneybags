@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from "electron"
 import * as path from "path"
 
-const enableDebugging: boolean = false;
+const enableDebugging: boolean = true;
 
 function createWindow() {
     const win = new BrowserWindow({

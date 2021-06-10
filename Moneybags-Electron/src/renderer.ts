@@ -2,7 +2,8 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 import * as electron from "electron";
-import { Titlebar, Color, Themebar } from "custom-electron-titlebar"
+import { Titlebar, Color } from "custom-electron-titlebar"
+import * as settings from 'electron-settings'
 
 
 const win = electron.remote.getCurrentWindow(); /* Note this is different to the
@@ -12,6 +13,8 @@ html global `window` variable */
 document.onreadystatechange = (event) => {
     if (document.readyState == "complete") {
         console.log('Document Ready')
+        initialiseSettings();
+        loadSettings();
     }
 };
 
@@ -66,5 +69,20 @@ function hideWindow(window: HTMLElement, windowHandle: HTMLElement) {
 function showWindow(window: HTMLElement, windowHandle: HTMLElement) {
     window.style.visibility = 'visible';
     windowHandle.style.visibility = 'visible';
+}
+
+async function loadSettings() {
+    await settings.set('loadedPersona', {
+        name: 'brad'
+    });
+}
+
+async function initialiseSettings() {
+    console.log('Loading settings')
+    settings.configure({
+        atomicSave: true,
+        fileName: './moneybags-settings.json',
+        prettify: true
+    });
 }
 
