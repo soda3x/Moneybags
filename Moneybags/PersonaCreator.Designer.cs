@@ -49,14 +49,21 @@
             this.bsbTB = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.useSameAddressCheckBox = new System.Windows.Forms.CheckBox();
-            this.useBusinessNameCheckBox = new System.Windows.Forms.CheckBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.logoPathTB = new MetroFramework.Controls.MetroTextBox();
+            this.logoPreview = new System.Windows.Forms.PictureBox();
+            this.logoBrowseBtn = new MetroFramework.Controls.MetroButton();
+            this.useLogoCheckBox = new MetroFramework.Controls.MetroToggle();
+            this.useSameAddressCheckBox = new MetroFramework.Controls.MetroToggle();
+            this.useBusinessNameCheckBox = new MetroFramework.Controls.MetroToggle();
+            this.stretchWarningLabel = new MetroFramework.Controls.MetroLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // loadPersonaFromFileBtn
             // 
-            this.loadPersonaFromFileBtn.Location = new System.Drawing.Point(278, 432);
+            this.loadPersonaFromFileBtn.Location = new System.Drawing.Point(278, 628);
             this.loadPersonaFromFileBtn.Name = "loadPersonaFromFileBtn";
             this.loadPersonaFromFileBtn.Size = new System.Drawing.Size(144, 23);
             this.loadPersonaFromFileBtn.TabIndex = 0;
@@ -177,7 +184,7 @@
             // 
             // saveAndUsePersonaBtn
             // 
-            this.saveAndUsePersonaBtn.Location = new System.Drawing.Point(428, 432);
+            this.saveAndUsePersonaBtn.Location = new System.Drawing.Point(428, 628);
             this.saveAndUsePersonaBtn.Name = "saveAndUsePersonaBtn";
             this.saveAndUsePersonaBtn.Size = new System.Drawing.Size(171, 23);
             this.saveAndUsePersonaBtn.TabIndex = 15;
@@ -219,49 +226,118 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(343, 254);
+            this.metroLabel10.Location = new System.Drawing.Point(23, 252);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(228, 19);
             this.metroLabel10.TabIndex = 21;
             this.metroLabel10.Text = "Use Same Address for Postal Address";
             // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(23, 140);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(121, 19);
+            this.metroLabel11.TabIndex = 23;
+            this.metroLabel11.Text = "Use Business Name";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(23, 395);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel2.TabIndex = 26;
+            this.metroLabel2.Text = "Use Logo";
+            // 
+            // logoPathTB
+            // 
+            this.logoPathTB.Location = new System.Drawing.Point(403, 422);
+            this.logoPathTB.Name = "logoPathTB";
+            this.logoPathTB.Size = new System.Drawing.Size(196, 23);
+            this.logoPathTB.TabIndex = 28;
+            // 
+            // logoPreview
+            // 
+            this.logoPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logoPreview.Location = new System.Drawing.Point(458, 451);
+            this.logoPreview.Name = "logoPreview";
+            this.logoPreview.Size = new System.Drawing.Size(141, 143);
+            this.logoPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPreview.TabIndex = 29;
+            this.logoPreview.TabStop = false;
+            // 
+            // logoBrowseBtn
+            // 
+            this.logoBrowseBtn.Location = new System.Drawing.Point(322, 422);
+            this.logoBrowseBtn.Name = "logoBrowseBtn";
+            this.logoBrowseBtn.Size = new System.Drawing.Size(75, 23);
+            this.logoBrowseBtn.TabIndex = 30;
+            this.logoBrowseBtn.Text = "Browse...";
+            this.logoBrowseBtn.Click += new System.EventHandler(this.logoBrowseBtn_Click);
+            // 
+            // useLogoCheckBox
+            // 
+            this.useLogoCheckBox.AutoSize = true;
+            this.useLogoCheckBox.DisplayStatus = false;
+            this.useLogoCheckBox.Location = new System.Drawing.Point(322, 397);
+            this.useLogoCheckBox.Name = "useLogoCheckBox";
+            this.useLogoCheckBox.Size = new System.Drawing.Size(50, 17);
+            this.useLogoCheckBox.TabIndex = 31;
+            this.useLogoCheckBox.Text = "Off";
+            this.useLogoCheckBox.UseVisualStyleBackColor = true;
+            this.useLogoCheckBox.CheckedChanged += new System.EventHandler(this.useLogoCheckBox_CheckedChanged);
+            // 
             // useSameAddressCheckBox
             // 
             this.useSameAddressCheckBox.AutoSize = true;
-            this.useSameAddressCheckBox.Location = new System.Drawing.Point(323, 258);
+            this.useSameAddressCheckBox.DisplayStatus = false;
+            this.useSameAddressCheckBox.Location = new System.Drawing.Point(323, 256);
             this.useSameAddressCheckBox.Name = "useSameAddressCheckBox";
-            this.useSameAddressCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.useSameAddressCheckBox.TabIndex = 22;
+            this.useSameAddressCheckBox.Size = new System.Drawing.Size(50, 17);
+            this.useSameAddressCheckBox.TabIndex = 32;
+            this.useSameAddressCheckBox.Text = "Off";
             this.useSameAddressCheckBox.UseVisualStyleBackColor = true;
             this.useSameAddressCheckBox.CheckedChanged += new System.EventHandler(this.useSameAddressCheckBox_CheckedChanged);
             // 
             // useBusinessNameCheckBox
             // 
             this.useBusinessNameCheckBox.AutoSize = true;
-            this.useBusinessNameCheckBox.Location = new System.Drawing.Point(323, 144);
+            this.useBusinessNameCheckBox.DisplayStatus = false;
+            this.useBusinessNameCheckBox.Location = new System.Drawing.Point(322, 143);
             this.useBusinessNameCheckBox.Name = "useBusinessNameCheckBox";
-            this.useBusinessNameCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.useBusinessNameCheckBox.TabIndex = 24;
+            this.useBusinessNameCheckBox.Size = new System.Drawing.Size(50, 17);
+            this.useBusinessNameCheckBox.TabIndex = 33;
+            this.useBusinessNameCheckBox.Text = "Off";
             this.useBusinessNameCheckBox.UseVisualStyleBackColor = true;
             this.useBusinessNameCheckBox.CheckedChanged += new System.EventHandler(this.useBusinessNameCheckBox_CheckedChanged);
             // 
-            // metroLabel11
+            // stretchWarningLabel
             // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(343, 141);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(121, 19);
-            this.metroLabel11.TabIndex = 23;
-            this.metroLabel11.Text = "Use Business Name";
+            this.stretchWarningLabel.AutoSize = true;
+            this.stretchWarningLabel.CustomForeColor = true;
+            this.stretchWarningLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.stretchWarningLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.stretchWarningLabel.Location = new System.Drawing.Point(23, 451);
+            this.stretchWarningLabel.Name = "stretchWarningLabel";
+            this.stretchWarningLabel.Size = new System.Drawing.Size(134, 19);
+            this.stretchWarningLabel.TabIndex = 34;
+            this.stretchWarningLabel.Text = "stretchWarningLabel";
             // 
             // PersonaCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 480);
+            this.ClientSize = new System.Drawing.Size(622, 674);
+            this.Controls.Add(this.stretchWarningLabel);
             this.Controls.Add(this.useBusinessNameCheckBox);
-            this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.useSameAddressCheckBox);
+            this.Controls.Add(this.useLogoCheckBox);
+            this.Controls.Add(this.logoBrowseBtn);
+            this.Controls.Add(this.logoPreview);
+            this.Controls.Add(this.logoPathTB);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.bsbTB);
@@ -285,6 +361,7 @@
             this.Controls.Add(this.loadPersonaFromFileBtn);
             this.Name = "PersonaCreator";
             this.Text = "Persona Creator";
+            ((System.ComponentModel.ISupportInitialize)(this.logoPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,8 +390,14 @@
         private MetroFramework.Controls.MetroTextBox bsbTB;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel10;
-        private System.Windows.Forms.CheckBox useSameAddressCheckBox;
-        private System.Windows.Forms.CheckBox useBusinessNameCheckBox;
         private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox logoPathTB;
+        private System.Windows.Forms.PictureBox logoPreview;
+        private MetroFramework.Controls.MetroButton logoBrowseBtn;
+        private MetroFramework.Controls.MetroToggle useLogoCheckBox;
+        private MetroFramework.Controls.MetroToggle useSameAddressCheckBox;
+        private MetroFramework.Controls.MetroToggle useBusinessNameCheckBox;
+        private MetroFramework.Controls.MetroLabel stretchWarningLabel;
     }
 }

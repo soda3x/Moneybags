@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -11,6 +12,11 @@ namespace Moneybags
         public PersonaCreator()
         {
             InitializeComponent();
+            logoPathTB.Enabled = false;
+            logoPathTB.Visible = false;
+            logoPreview.Visible = false;
+            logoBrowseBtn.Visible = false;
+            stretchWarningLabel.Visible = false;
             PrefillDataFromLoadedPersona();
         }
 
@@ -19,7 +25,7 @@ namespace Moneybags
             Persona newPersona = new Persona(this.firstNameTB.Text, this.lastNameTB.Text, this.abnTB.Text,
                 this.addressLine1TB.Text, this.addressLine2TB.Text, this.postal1TB.Text, this.postal2TB.Text,
                 this.accountNumberTB.Text, this.bsbTB.Text, this.useBusinessNameCheckBox.Checked,
-                this.useSameAddressCheckBox.Checked)
+                this.useSameAddressCheckBox.Checked, this.useLogoCheckBox.Checked, this.logoPathTB.Text)
             {
                 path = filePath
             };
@@ -61,14 +67,22 @@ namespace Moneybags
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                IFormatter formatter = new BinaryFormatter();
-                Stream stream = new FileStream(saveFileDialog.FileName, FileMode.Create, FileAccess.Write);
-                Persona newPersona = this.CreatePersona(saveFileDialog.FileName);
-                SetAsActivePersona(newPersona);
-                formatter.Serialize(stream, newPersona);
-                stream.Close();
+                try
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    Stream stream = new FileStream(saveFileDialog.FileName, FileMode.Create, FileAccess.Write);
+                    Persona newPersona = this.CreatePersona(saveFileDialog.FileName);
+                    SetAsActivePersona(newPersona);
+                    formatter.Serialize(stream, newPersona);
+                    stream.Close();
+                    Application.Restart();
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Unable to save Persona.\r\nPlease ensure you are not attempting to overwrite the Persona you currently have loaded.", "Moneybags - Unable to save Persona");
+                }
             }
-            Application.Restart();
+            
         }
 
         private void PrefillDataFromLoadedPersona()
@@ -95,6 +109,12 @@ namespace Moneybags
                 bsbTB.Text = loadedPersona.BSB.ToString();
                 useSameAddressCheckBox.Checked = loadedPersona.UseSameAddress;
                 useBusinessNameCheckBox.Checked = loadedPersona.IsBusiness;
+                useLogoCheckBox.Checked = loadedPersona.UseLogo;
+                logoPathTB.Text = loadedPersona.LogoPath;
+                if (loadedPersona.UseLogo)
+                {
+                    setLogoPreview(loadedPersona.LogoPath);
+                }
             }
         }
 
@@ -123,10 +143,11 @@ namespace Moneybags
                 }
                 catch (ArgumentException)
                 {
-                    string message = "The Persona you are attempting to open may have been made with an earlier version of Moneybags. Please use a different Persona.";
-                    string title = "Moneybags - Could not load Persona";
-                    MessageBox.Show(message, title);
+                    MessageBox.Show("The Persona you are attempting to open may have been made with an earlier version of Moneybags.\r\nPlease use a different Persona.",
+                        "Moneybags - Could not load Persona");
                 }
+
+                
             }
         }
 
@@ -163,6 +184,65 @@ namespace Moneybags
                 lastNameLabel.Visible = true;
                 lastNameTB.Text = "";
                 lastNameTB.Visible = true;
+            }
+        }
+
+        private void useLogoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (useLogoCheckBox.Checked)
+            {
+                logoPathTB.Visible = true;
+                logoPreview.Visible = true;
+                logoBrowseBtn.Visible = true;
+            }
+            else
+            {
+                logoPathTB.Visible = false;
+                logoPreview.Visible = false;
+                logoBrowseBtn.Visible = false;
+                stretchWarningLabel.Visible = false;
+            }
+        }
+
+        private void logoBrowseBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                RestoreDirectory = true,
+                Title = "Load an image to use as a Logo",
+                DefaultExt = "png",
+                Filter = "Image (*.jpg; *.jpeg; *.gif; *.bmp; *.png) | *.jpg; *.jpeg; *.gif; *.bmp; *.png",
+                CheckFileExists = true,
+                CheckPathExists = true
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                setLogoPreview(openFileDialog.FileName);
+            }
+        }
+
+        private void setLogoPreview(string path)
+        {
+            if (File.Exists(path))
+            {
+                logoPreview.Image = new Bitmap(path);
+                logoPathTB.Text = path;
+                if (!logoPreview.Image.Width.Equals(logoPreview.Image.Height))
+                {
+                    stretchWarningLabel.Visible = true;
+                    stretchWarningLabel.Text = "Note: The loaded image is not square.\r\nUsing a square image is recommended to\r\nprevent your logo from appearing stretched.";
+                }
+                else
+                {
+                    stretchWarningLabel.Visible = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Moneybags could not import logo, the file was not found.\r\nPlease try importing the logo again.", 
+                    "Moneybags - Could not import logo");
             }
         }
     }

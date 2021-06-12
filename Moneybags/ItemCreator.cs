@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Components;
+using System;
 using System.Windows.Forms;
 
 namespace Moneybags
@@ -28,13 +29,13 @@ namespace Moneybags
                 addItemBtn.Text = "Update Item";
             }
 
-            ToolTip unitPriceGSTToolTip = new ToolTip();
+            MetroToolTip unitPriceGSTToolTip = new MetroToolTip();
             unitPriceGSTToolTip.Active = true;
             unitPriceGSTToolTip.AutoPopDelay = 4000;
             unitPriceGSTToolTip.InitialDelay = 600;
             unitPriceGSTToolTip.IsBalloon = true;
             unitPriceGSTToolTip.ToolTipIcon = ToolTipIcon.Info;
-            unitPriceGSTToolTip.SetToolTip(unitPriceIncludesGSTLabel, "Leave this Checkbox unchecked to have Moneybags automatically add GST to your Unit Price");
+            unitPriceGSTToolTip.SetToolTip(unitPriceIncludesGSTLabel, "Leave this Checkbox unchecked to have Moneybags\r\nautomatically add GST to your Unit Price");
         }
 
         private void AddItemBtn_Click(object sender, EventArgs e)

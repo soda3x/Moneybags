@@ -79,7 +79,7 @@
             this.createNewInvoiceLabel.Name = "createNewInvoiceLabel";
             this.createNewInvoiceLabel.Size = new System.Drawing.Size(315, 23);
             this.createNewInvoiceLabel.TabIndex = 3;
-            this.createNewInvoiceLabel.Text = "Invoice Creator";
+            this.createNewInvoiceLabel.Text = "Create an Invoice";
             // 
             // choosePersonaLabel
             // 

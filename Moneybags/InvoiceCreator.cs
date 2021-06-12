@@ -181,16 +181,17 @@ namespace Moneybags
             }
             Dictionary<string, string> dict = new Dictionary<string, string>
             {
-                { "FIRST_NAME", persona.FirstName },
-                { "LAST_NAME", persona.LastName },
-                { "ABN", persona.ABN.ToString() },
-                { "POSTAL_LINE_1", persona.PostalAddressLine1 },
-                { "POSTAL_LINE_2", persona.PostalAddressLine2 },
+                { "FIRST_NAME", firstNameTB.Text },
+                { "LAST_NAME", lastNameTB.Text },
+                { "ABN", abnTB.Text },
+                { "POSTAL_LINE_1", postalAddr1TB.Text },
+                { "POSTAL_LINE_2", postalAddr2TB.Text },
                 { "DATE", DateTime.Now.ToShortDateString() },
-                { "ADDR_LINE_1", persona.AddressLine1 },
-                { "ADDR_LINE_2", persona.AddressLine2 },
-                { "ACCOUNT_NO", persona.AccountNumber.ToString() },
-                { "BSB", persona.BSB.ToString() }
+                { "ADDR_LINE_1", addr1TB.Text },
+                { "ADDR_LINE_2", addr2TB.Text },
+                { "ACCOUNT_NO", accountNumberTB.Text },
+                { "BSB", bsbTB.Text },
+                { "LOGO", persona.LogoPath }
             };
 
             HTMLCreator htmlCreator = new HTMLCreator("./HTML/pdf_template.html", this.itemsListView);
@@ -205,6 +206,11 @@ namespace Moneybags
                 invoiceSuccessLabel.Visible = true;
             }
 
+        }
+
+        private void continueBtn_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(1);
         }
     }
 }

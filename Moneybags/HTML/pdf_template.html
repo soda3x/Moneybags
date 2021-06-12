@@ -1,42 +1,47 @@
 <head>
-    <link rel="stylesheet" href="./bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./bootstrap/bootstrap.css">
 </head>
 
 <body>
     <div class="container">
-        <h1 class="display-3 text-center">{FIRST_NAME} {LAST_NAME}</h1>
+        <h1 class="display-3 text-center">{FIRST_NAME}{LAST_NAME}</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    {LOGO}
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
         <h5 class="text-center">ABN <small class="text-muted">{ABN}</small></h5>
         <h5 class="text-center">{POSTAL_LINE_1} {POSTAL_LINE_2}</h5>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm">
-            </br>
-        </br>
-                    <h5 class="text-left">{ADDR_LINE_1}</h5>
-                    <h5 class="text-left text-muted">{ADDR_LINE_2}</h5>
-                    <h5 class="text-left">PAY TO</h5>
-                    <h5 class="text-left">Account Number: <small class="text-muted">{ACCOUNT_NO}</small></h5>
-                    <h5 class="text-left">BSB: <small class="text-muted">{BSB}</small></h5>
+            <div class="col">
+                <h5 class="text-left">{ADDR_LINE_1}</h5>
+                <h5 class="text-left text-muted">{ADDR_LINE_2}</h5>
+                <h5 class="text-left">PAY TO</h5>
+                <h5 class="text-left">Account Number: <small class="text-muted">{ACCOUNT_NO}</small></h5>
+                <h5 class="text-left">BSB: <small class="text-muted">{BSB}</small></h5>
             </div>
-            <div class="col-sm">
+            <div class="col">
             </div>
-            <div class="col-sm">
-                            <h5 class="text-left">Invoice ID: <small class="text-muted">{INV_NO}</small></h5>
-                            <h5 class="text-left">Date: <small class="text-muted">{DATE}</small></h5>
-                            <h5 class="text-left">Deliver To: <small class="text-muted">{POSTAL_LINE_1}</small></h5>
-                            <h5 class="text-left"><small class="text-muted">{POSTAL_LINE_2}</small></h5>
+            <div class="col">
+                <h5 class="text-left">Invoice ID: <small class="text-muted">{INV_NO}</small></h5>
+                <h5 class="text-left">Date: <small class="text-muted">{DATE}</small></h5>
+                <h5 class="text-left">Deliver To: <small class="text-muted">{POSTAL_LINE_1}</small></h5>
+                <h5 class="text-left"><small class="text-muted">{POSTAL_LINE_2}</small></h5>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
-                <div class="col-sm">
-                </div>
-                <div class="col-sm"></div>
-                <div class="col-sm">
-                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
             </div>
 
             <div class="container">
@@ -62,31 +67,29 @@
             </div>
 
             <div class="container">
-                    <div class="row">
-                            <div class="col-sm">
-                            </div>
-                            <div class="col-sm">
-                            </div>
-                            <div class="col-sm">
-                                <dl class="row">
-                                    <dt class="col-sm-6 text-right alert-dark">Total excluding GST</dt>
-                                    <dd class="col-sm-3 text-right"><small class="text-muted">{TOTAL_EXCL_GST}</small></dd>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <dl class="row">
+                            <dt class="col text-right alert-dark">Total excluding GST</dt>
+                            <dd class="col text-right"><small class="text-muted">{TOTAL_EXCL_GST}</small></dd>
 
-                                    <dt class="col-sm-6 text-right alert-dark">GST</dt>
-                                    <dd class="col-sm-3 text-right"><small class="text-muted">{GST}</small></dd>
+                            <dt class="col text-right alert-dark">GST</dt>
+                            <dd class="col text-right"><small class="text-muted">{GST}</small></dd>
 
-                                    <dt class="col-sm-6 text-right alert-dark">Total including GST</dt>
-                                    <dd class="col-sm-3 text-right"><small class="text-muted">{TOTAL_INCL_GST}</small></dd>
-                                    
-                                    <dt class="col-sm-6 text-right alert-dark">Amount Received</dt>
-                                    <dd class="col-sm-3 text-right"><small class="text-muted">{AMT_REC}</small></dd>
+                            <dt class="col text-right alert-dark">Total including GST</dt>
+                            <dd class="col text-right"><small class="text-muted">{TOTAL_INCL_GST}</small></dd>
 
-                                    <dt class="col-sm-6 text-right alert-dark">Invoice Balance</dt>
-                                    <dd class="col-sm-3 text-right"><small class="text-muted">{INV_BAL}</small></dd>
-                                </dl>
-                            </div>
-            </div>
+                            <dt class="col text-right alert-dark">Amount Received</dt>
+                            <dd class="col text-right"><small class="text-muted">{AMT_REC}</small></dd>
 
-            <script src="./jquery/jquery-3.4.1.slim.min.js"></script>
-            <script src="./bootstrap/bootstrap.bundle.js"></script>
+                            <dt class="col text-right alert-dark">Invoice Balance</dt>
+                            <dd class="col text-right"><small class="text-muted">{INV_BAL}</small></dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <script src="./jquery/jquery-3.4.1.slim.min.js"></script>
+                <script src="./bootstrap/bootstrap.bundle.js"></script>
 </body>

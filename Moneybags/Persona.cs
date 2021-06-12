@@ -15,13 +15,16 @@ namespace Moneybags
         public string PostalAddressLine1 { get; set; }
         public string PostalAddressLine2 { get; set; }
         public string path { get; set; }
+        public string LogoPath { get; set; }
 
         public bool IsBusiness { get; set; }
 
         public bool UseSameAddress { get; set; }
+        public bool UseLogo { get; set; }
 
         public Persona(string firstName, string lastName, string ABN, string addressLine1, string addressLine2, 
-            string postalAddressLine1, string postalAddressLine2, string accountNumber, string bsb, bool isBusiness, bool useSameAddress)
+            string postalAddressLine1, string postalAddressLine2, string accountNumber, string bsb, bool isBusiness, 
+            bool useSameAddress, bool useLogo, string logoPath)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -33,7 +36,9 @@ namespace Moneybags
             this.AccountNumber = accountNumber;
             this.BSB = bsb;
             this.IsBusiness = isBusiness;
-            this.UseSameAddress = UseSameAddress;
+            this.UseSameAddress = useSameAddress;
+            this.UseLogo = useLogo;
+            this.LogoPath = logoPath;
         }
 
         public void SetPath(string filePath)

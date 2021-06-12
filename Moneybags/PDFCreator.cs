@@ -27,7 +27,8 @@ namespace Moneybags
                 fileStream.Write(byteArray, 0, byteArray.Length);
                 fileStream.Close();
                 return true;
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 return false;
             }
@@ -68,12 +69,14 @@ namespace Moneybags
                 {
                     Process.Start(saveFileDialog.FileName);
                     return true;
-                } else
+                }
+                else
                 {
                     return false;
                 }
-                
-            } else
+
+            }
+            else
             {
                 return false;
             }

@@ -27,8 +27,20 @@ namespace Moneybags
         public bool GenerateHTMLFile(Dictionary<string, string> inputDict)
         {
             string content = File.ReadAllText("./HTML/Output.html");
-            content = content.Replace("{FIRST_NAME}", inputDict["FIRST_NAME"]);
+
+            // If we're using a First + Last Name rather than a business name then add a space for "Fname_Lname"
+            if (!inputDict["LAST_NAME"].Equals(""))
+            {
+                content = content.Replace("{FIRST_NAME}", inputDict["FIRST_NAME"] + " ");
+            }
+            else
+            {
+                content = content.Replace("{FIRST_NAME}", inputDict["FIRST_NAME"]);
+            }
+            
             content = content.Replace("{LAST_NAME}", inputDict["LAST_NAME"]);
+
+            
 
             // If ABN field is empty then don't render it in the Invoice
             if (inputDict["ABN"].Equals(""))
@@ -40,6 +52,7 @@ namespace Moneybags
             {
                 content = content.Replace("{ABN}", inputDict["ABN"]);
             }
+
             content = content.Replace("{POSTAL_LINE_1}", inputDict["POSTAL_LINE_1"]);
             content = content.Replace("{POSTAL_LINE_2}", inputDict["POSTAL_LINE_2"]);
             content = content.Replace("{DATE}", inputDict["DATE"]);
@@ -47,6 +60,15 @@ namespace Moneybags
             content = content.Replace("{ADDR_LINE_2}", inputDict["ADDR_LINE_2"]);
             content = content.Replace("{ACCOUNT_NO}", inputDict["ACCOUNT_NO"]);
             content = content.Replace("{BSB}", inputDict["BSB"]);
+
+            if (inputDict["LOGO"].Equals(""))
+            {
+                content = content.Replace("{LOGO}", "");
+            }
+            else
+            {
+                content = content.Replace("{LOGO}", "<img src=\"" + inputDict["LOGO"] + "\" class=\"rounded mx-auto d-block\">");
+            }
             File.WriteAllText("./HTML/Output.html", content);
 
             List<string> rows = new List<string>();

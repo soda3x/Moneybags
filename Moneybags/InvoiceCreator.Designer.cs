@@ -64,6 +64,7 @@
             this.gst = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addItemBtn = new MetroFramework.Controls.MetroButton();
+            this.continueBtn = new MetroFramework.Controls.MetroButton();
             this.tabControl.SuspendLayout();
             this.basicDetailsPage.SuspendLayout();
             this.addItemsPage.SuspendLayout();
@@ -78,7 +79,7 @@
             this.tabControl.Controls.Add(this.addItemsPage);
             this.tabControl.Location = new System.Drawing.Point(24, 64);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SelectedIndex = 1;
             this.tabControl.Size = new System.Drawing.Size(1202, 839);
             this.tabControl.TabIndex = 0;
             // 
@@ -104,6 +105,7 @@
             this.basicDetailsPage.Controls.Add(this.metroLabel2);
             this.basicDetailsPage.Controls.Add(this.firstNameTB);
             this.basicDetailsPage.Controls.Add(this.firstNameLabel);
+            this.basicDetailsPage.Controls.Add(this.continueBtn);
             this.basicDetailsPage.HorizontalScrollbarBarColor = true;
             this.basicDetailsPage.Location = new System.Drawing.Point(4, 35);
             this.basicDetailsPage.Name = "basicDetailsPage";
@@ -308,7 +310,7 @@
             this.invoiceSuccessLabel.AutoSize = true;
             this.invoiceSuccessLabel.BackColor = System.Drawing.Color.Gainsboro;
             this.invoiceSuccessLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceSuccessLabel.Location = new System.Drawing.Point(3, 745);
+            this.invoiceSuccessLabel.Location = new System.Drawing.Point(3, 743);
             this.invoiceSuccessLabel.Name = "invoiceSuccessLabel";
             this.invoiceSuccessLabel.Size = new System.Drawing.Size(80, 17);
             this.invoiceSuccessLabel.TabIndex = 10;
@@ -339,7 +341,7 @@
             // removeItemBtn
             // 
             this.removeItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeItemBtn.Location = new System.Drawing.Point(729, 764);
+            this.removeItemBtn.Location = new System.Drawing.Point(731, 764);
             this.removeItemBtn.Name = "removeItemBtn";
             this.removeItemBtn.Size = new System.Drawing.Size(156, 33);
             this.removeItemBtn.TabIndex = 4;
@@ -349,7 +351,7 @@
             // createInvoiceBtn
             // 
             this.createInvoiceBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.createInvoiceBtn.Location = new System.Drawing.Point(1051, 764);
+            this.createInvoiceBtn.Location = new System.Drawing.Point(1054, 764);
             this.createInvoiceBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createInvoiceBtn.Name = "createInvoiceBtn";
             this.createInvoiceBtn.Size = new System.Drawing.Size(140, 33);
@@ -375,7 +377,7 @@
             this.itemsListView.HideSelection = false;
             this.itemsListView.Location = new System.Drawing.Point(4, 3);
             this.itemsListView.Name = "itemsListView";
-            this.itemsListView.Size = new System.Drawing.Size(1187, 758);
+            this.itemsListView.Size = new System.Drawing.Size(1190, 757);
             this.itemsListView.TabIndex = 5;
             this.itemsListView.UseCompatibleStateImageBehavior = false;
             this.itemsListView.View = System.Windows.Forms.View.Details;
@@ -409,12 +411,22 @@
             // addItemBtn
             // 
             this.addItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addItemBtn.Location = new System.Drawing.Point(890, 764);
+            this.addItemBtn.Location = new System.Drawing.Point(893, 764);
             this.addItemBtn.Name = "addItemBtn";
             this.addItemBtn.Size = new System.Drawing.Size(156, 33);
             this.addItemBtn.TabIndex = 3;
             this.addItemBtn.Text = "Add Item";
             this.addItemBtn.Click += new System.EventHandler(this.AddItemBtn_Click);
+            // 
+            // continueBtn
+            // 
+            this.continueBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.continueBtn.Location = new System.Drawing.Point(1046, 756);
+            this.continueBtn.Name = "continueBtn";
+            this.continueBtn.Size = new System.Drawing.Size(145, 41);
+            this.continueBtn.TabIndex = 22;
+            this.continueBtn.Text = "Continue";
+            this.continueBtn.Click += new System.EventHandler(this.continueBtn_Click);
             // 
             // InvoiceCreator
             // 
@@ -471,5 +483,6 @@
         private MetroFramework.Controls.MetroButton saveIncompleteBtn;
         private MetroFramework.Controls.MetroButton loadIncompleteBtn;
         private System.Windows.Forms.Label invoiceSuccessLabel;
+        private MetroFramework.Controls.MetroButton continueBtn;
     }
 }
