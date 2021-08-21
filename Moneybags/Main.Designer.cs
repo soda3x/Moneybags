@@ -38,6 +38,7 @@
             this.choosePersonaLabel = new System.Windows.Forms.Label();
             this.choosePersonaPictureBox = new System.Windows.Forms.PictureBox();
             this.aboutLabel = new MetroFramework.Controls.MetroLabel();
+            this.updateNotifyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.createNewInvoicePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.choosePersonaPictureBox)).BeginInit();
@@ -113,11 +114,21 @@
             this.aboutLabel.Text = "About";
             this.aboutLabel.Click += new System.EventHandler(this.AboutLabel_Click);
             // 
+            // updateNotifyLabel
+            // 
+            this.updateNotifyLabel.AutoSize = true;
+            this.updateNotifyLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateNotifyLabel.Location = new System.Drawing.Point(24, 440);
+            this.updateNotifyLabel.Name = "updateNotifyLabel";
+            this.updateNotifyLabel.Size = new System.Drawing.Size(0, 13);
+            this.updateNotifyLabel.TabIndex = 6;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 460);
+            this.Controls.Add(this.updateNotifyLabel);
             this.Controls.Add(this.aboutLabel);
             this.Controls.Add(this.choosePersonaLabel);
             this.Controls.Add(this.createNewInvoiceLabel);
@@ -146,6 +157,7 @@
         private System.Windows.Forms.Label choosePersonaLabel;
         private System.Windows.Forms.PictureBox createNewInvoicePictureBox;
         private MetroFramework.Controls.MetroLabel aboutLabel;
+        private System.Windows.Forms.Label updateNotifyLabel;
     }
 }
 

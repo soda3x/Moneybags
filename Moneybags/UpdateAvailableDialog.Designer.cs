@@ -62,7 +62,7 @@ namespace Moneybags
             this.ignoreBtn.Size = new System.Drawing.Size(144, 23);
             this.ignoreBtn.TabIndex = 3;
             this.ignoreBtn.Text = "Not Now";
-            this.ignoreBtn.Click += new System.EventHandler(this.ignoreBtn_Click);
+            this.ignoreBtn.Click += new System.EventHandler(this.IgnoreBtn_Click);
             // 
             // goToUpdateBtn
             // 
@@ -71,7 +71,7 @@ namespace Moneybags
             this.goToUpdateBtn.Size = new System.Drawing.Size(144, 23);
             this.goToUpdateBtn.TabIndex = 4;
             this.goToUpdateBtn.Text = "Download Update";
-            this.goToUpdateBtn.Click += new System.EventHandler(this.goToUpdateBtn_Click);
+            this.goToUpdateBtn.Click += new System.EventHandler(this.GoToUpdateBtn_Click);
             // 
             // UpdateAvailableDialog
             // 

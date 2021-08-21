@@ -93,7 +93,7 @@ namespace Moneybags
         private void CheckForUpdates()
         {
             string ourVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string latestVersionString = String.Empty;
+            string latestVersionString;
             WebClient wc = new WebClient();
 
             // Add headers to impersonate a web browser. Some web sites 
@@ -102,15 +102,20 @@ namespace Moneybags
             wc.Headers.Add("Accept", "*/*");
             wc.Headers.Add("Accept-Language", "en-gb,en;q=0.5");
             wc.Headers.Add("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
-
-            latestVersionString = wc.DownloadString("https://raw.githubusercontent.com/soda3x/Moneybags/master/version.txt");
-
-            var checkedVersion = new Version(latestVersionString);
-            var currentVersion = new Version(ourVersion);
-            var result = checkedVersion.CompareTo(currentVersion);
-            if (result > 0)
+            try
             {
-                new UpdateAvailableDialog(ourVersion, latestVersionString).ShowDialog();
+                latestVersionString = wc.DownloadString("https://raw.githubusercontent.com/soda3x/Moneybags/master/version.txt");
+
+                var checkedVersion = new Version(latestVersionString);
+                var currentVersion = new Version(ourVersion);
+                var result = checkedVersion.CompareTo(currentVersion);
+                if (result > 0)
+                {
+                    new UpdateAvailableDialog(ourVersion, latestVersionString, updateNotifyLabel).ShowDialog();
+                }
+            } catch (WebException)
+            {
+                updateNotifyLabel.Text = "Unable to check for updates, you may not be using the latest version of Moneybags.";
             }
         }
     }

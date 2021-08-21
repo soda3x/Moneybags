@@ -12,19 +12,23 @@ namespace Moneybags
 {
     public partial class UpdateAvailableDialog : MetroFramework.Forms.MetroForm
     {
-        public UpdateAvailableDialog(string currentVersion, string newVersion)
+        private readonly Label updateStatusLabel;
+
+        public UpdateAvailableDialog(string currentVersion, string newVersion, Label updateStatusLabel)
         {
             InitializeComponent();
             newVersionLabel.Text = "New Version: " + newVersion;
             currentVersionLabel.Text = "Current Version: " + currentVersion;
+            this.updateStatusLabel = updateStatusLabel;
         }
 
-        private void ignoreBtn_Click(object sender, EventArgs e)
+        private void IgnoreBtn_Click(object sender, EventArgs e)
         {
+            this.updateStatusLabel.Text = "You are using an outdated version of Moneybags. Update Moneybags for the best experience.";
             this.Dispose();
         }
 
-        private void goToUpdateBtn_Click(object sender, EventArgs e)
+        private void GoToUpdateBtn_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/soda3x/Moneybags/releases");
         }
