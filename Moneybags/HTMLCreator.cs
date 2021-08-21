@@ -67,7 +67,7 @@ namespace Moneybags
             }
             else
             {
-                content = content.Replace("{LOGO}", "<img src=\"" + inputDict["LOGO"] + "\" class=\"rounded mx-auto d-block\">");
+                content = content.Replace("{LOGO}", "<img src=\"" + inputDict["LOGO"] + "\" class=\"rounded mx-auto d-block\" style=\"max-width:250px; max-height:250px;\">");
             }
             File.WriteAllText("./HTML/Output.html", content);
 

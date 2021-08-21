@@ -11,11 +11,11 @@ namespace Moneybags
 {
     class PDFCreator
     {
-        private string pathToHTML { get; set; }
-        private Dictionary<string, string> metadata;
+        private string PathToHTML { get; set; }
+        private readonly Dictionary<string, string> metadata;
         public PDFCreator(string pathToHTML, Dictionary<string, string> metadata)
         {
-            this.pathToHTML = pathToHTML;
+            this.PathToHTML = pathToHTML;
             this.metadata = metadata;
         }
 
@@ -46,7 +46,7 @@ namespace Moneybags
             ObjectConfig configuration = new ObjectConfig();
             configuration
                 .SetAllowLocalContent(true)
-                .SetPageUri(pathToHTML)
+                .SetPageUri(PathToHTML)
                 .SetPrintBackground(true)
                 .SetScreenMediaType(true);
 
