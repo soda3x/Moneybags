@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@../css/Demo.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.bradleynewman.moneybags.interfaces.LaunchScreenController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="87.0" prefWidth="1280.0">
+               <children>
+                  <StackPane alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="832.0" HBox.hgrow="NEVER">
+                     <children>
+                        <Label fx:id="titleLabel" alignment="CENTER" prefHeight="47.0" prefWidth="822.0" text="Welcome back, &lt;first-name&gt;!" textAlignment="CENTER" textFill="#454545" StackPane.alignment="CENTER_LEFT">
+                           <font>
+                              <Font name="Roboto Bold" size="60.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="1280.0">
+               <children>
+                  <StackPane alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="358.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="341.0" text="What would you like to do?" textAlignment="CENTER" textFill="#454545">
+                           <font>
+                              <Font name="Roboto Black" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="284.0" prefWidth="1280.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="274.0" prefWidth="1240.0" spacing="10.0">
+                     <children>
+                        <MFXButton fx:id="newInvoiceBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#newInvoicePressed" prefHeight="15.0" prefWidth="113.0" style="-fx-background-color: #639FAB;" text="New Invoice" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="16.0" />
+                           </font>
+                        </MFXButton>
+                        <MFXButton fx:id="loadInvoiceBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#loadInvoicePressed" prefHeight="32.0" prefWidth="136.0" style="-fx-background-color: #639FAB;" text="Load Invoice" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="16.0" />
+                           </font>
+                        </MFXButton>
+                        <Label />
+                        <MFXButton fx:id="newQuoteBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#newQuotePressed" prefHeight="15.0" prefWidth="113.0" style="-fx-background-color: #639FAB;" text="New Quote" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="16.0" />
+                           </font>
+                        </MFXButton>
+                        <MFXButton fx:id="loadQuoteBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#loadQuotePressed" prefHeight="15.0" prefWidth="113.0" style="-fx-background-color: #639FAB;" text="Load Quote" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="16.0" />
+                           </font>
+                        </MFXButton>
+                        <Label />
+                        <MFXButton fx:id="manageInventoryBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" onAction="#manageInventoryPressed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #6D5959;" text="Manage Inventory" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="16.0" />
+                           </font>
+                        </MFXButton>
+                        <Label />
+                        <MFXButton fx:id="managePersonaBtn" alignment="CENTER" buttonType="RAISED" defaultButton="true" depthLevel="LEVEL1" onAction="#managePersonaPressed" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #6D5959;" text="Manage Persona" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="16.0" />
+                           </font>
+                        </MFXButton>
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="589.0" prefWidth="1240.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <VBox layoutX="5.0" layoutY="55.0" prefHeight="381.0" prefWidth="1230.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="55.0">
+                           <children>
+                              <Label text="Recent Invoices" textFill="#454545">
+                                 <font>
+                                    <Font name="Roboto Black" size="26.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="309.0" prefWidth="1230.0" spacing="20.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <MFXButton fx:id="recent1" buttonType="RAISED" depthLevel="LEVEL3" prefHeight="273.0" prefWidth="181.0" text="&lt;invoice-file-name&gt;" wrapText="true" />
+                                    <MFXButton fx:id="recent2" buttonType="RAISED" depthLevel="LEVEL3" prefHeight="273.0" prefWidth="181.0" text="&lt;invoice-file-name&gt;" wrapText="true" />
+                                    <MFXButton fx:id="recent3" buttonType="RAISED" depthLevel="LEVEL3" prefHeight="273.0" prefWidth="181.0" text="&lt;invoice-file-name&gt;" wrapText="true" />
+                                    <MFXButton fx:id="recent4" buttonType="RAISED" depthLevel="LEVEL3" prefHeight="273.0" prefWidth="181.0" text="&lt;invoice-file-name&gt;" wrapText="true" />
+                                    <MFXButton fx:id="recent5" buttonType="RAISED" depthLevel="LEVEL3" prefHeight="273.0" prefWidth="181.0" text="&lt;invoice-file-name&gt;" wrapText="true" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
