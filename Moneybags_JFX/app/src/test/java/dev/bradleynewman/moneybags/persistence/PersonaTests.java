@@ -24,7 +24,7 @@ class PersonaTests {
 
     @Test
     void testPersonaFromString() {
-        Persona p = new Persona(PERSONA_STR);
+        Persona p = new Persona(PERSONA_STR, ";");
         Assertions.assertEquals("Ganton, Los Santos", p.get("AddressLine2"));
         Assertions.assertEquals("1 Grove St", p.get("AddressLine1"));
         Assertions.assertEquals("John", p.get("FirstName"));
