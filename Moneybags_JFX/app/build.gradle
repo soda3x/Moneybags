@@ -30,6 +30,11 @@ dependencies {
     implementation 'org.openjfx:javafx:17.0.2'
     implementation 'org.apache.logging.log4j:log4j-api:2.18.0'
     implementation 'org.apache.logging.log4j:log4j-core:2.18.0'
+    implementation 'org.kordamp.ikonli:ikonli-javafx:12.3.1'
+    implementation 'org.kordamp.ikonli:ikonli-materialdesign2-pack:12.3.1'
+
+
+
 
     // api 'io.github.typhon0:AnimateFX:1.2.3'
 }

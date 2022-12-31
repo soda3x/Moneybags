@@ -73,7 +73,7 @@ public class Inventory {
 
     /**
      * Get Inventory as String.
-     * This will be represented in {@code itemCode;itemDec;unitPrice} rows to ease
+     * This will be represented in {@code itemCode;itemDesc;unitPrice} rows to ease
      * saving to file.
      */
     @Override

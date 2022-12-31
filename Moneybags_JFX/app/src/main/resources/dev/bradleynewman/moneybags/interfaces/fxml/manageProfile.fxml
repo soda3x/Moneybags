@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="900.0" prefHeight="500.0" prefWidth="900.0"
+   xmlns="http://javafx.com/javafx/17"
+   xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.bradleynewman.moneybags.interfaces.ProfileManagerController" stylesheets="@../fonts/Fonts.css">
+   <children>
+      <MFXTableView fx:id="profileKVView" footerVisible="false" layoutX="250.0" layoutY="122.0" prefHeight="335.0" prefWidth="590.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="60.0" />
+      <MFXButton fx:id="saveAndUseProfileBtn" buttonType="RAISED" layoutX="447.0" layoutY="364.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #639FAB; -fx-font-family: 'Visby Round CF Regular'; -fx-font-size:12" text="Save Profile" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="25.0">
+         <graphic>
+            <FontIcon iconLiteral="mdi2f-floppy" iconSize="24" />
+         </graphic>
+      </MFXButton>
+      <MFXButton fx:id="loadProfileFileBtn" buttonType="RAISED" layoutX="292.0" layoutY="364.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #639FAB; -fx-font-family: 'Visby Round CF Regular'; -fx-font-size:12" text="Load Profile" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="190.0">
+         <graphic>
+            <FontIcon iconLiteral="mdi2f-file-account-outline" iconSize="24" />
+         </graphic>
+      </MFXButton>
+      <MFXButton fx:id="createNewProfileBtn" buttonType="RAISED" layoutX="5.0" layoutY="364.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #639FAB; -fx-font-family: 'Visby Round CF Regular'; -fx-font-size:12" text="New Profile" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="25.0">
+         <graphic>
+            <FontIcon iconLiteral="mdi2f-file-plus-outline" iconSize="24" />
+         </graphic>
+      </MFXButton>
+      <Label layoutX="25.0" layoutY="55.0" text="Profile Manager" AnchorPane.topAnchor="10.0" style="-fx-font-family: 'Visby Round CF Bold'; -fx-font-size:16">
+      </Label>
+      <Label fx:id="profileInformationLbl" layoutX="25.0" layoutY="29.0" text="&lt;profile-information&gt;" AnchorPane.topAnchor="35.0" style="-fx-font-family: 'Visby Round CF Regular'">
+      </Label>
+   </children>
+</AnchorPane>
