@@ -109,7 +109,7 @@ After choosing an issue to work on, begin by viewing the Development Environment
 Don't be afraid to reach out and ask questions!
 
 ## Styleguides
-See [STYLE.md](https://github.com/soda3x/Moneybags/STYLE.md)
+See [STYLE.md](https://github.com/soda3x/Moneybags/blob/main/STYLE.md)
 
 <!-- omit in toc -->
 ## Attribution

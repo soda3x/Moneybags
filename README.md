@@ -65,6 +65,6 @@ To distribute, run `./gradlew dist` - This will create a self-contained executab
 
 ## Further Reading
 
-[CONTRIBUTING.md](https://github.com/soda3x/Moneybags/CONTRIBUTING.md)
+[CONTRIBUTING](https://github.com/soda3x/Moneybags/blob/main/CONTRIBUTING.md)
 
-[STYLE.md](https://github.com/soda3x/Moneybags/STYLE.md)
+[STYLE](https://github.com/soda3x/Moneybags/blob/main/STYLE.md)
