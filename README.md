@@ -62,3 +62,9 @@ To install the JDK (OpenJDK 21, specifically), the simplest way (imo) is to use 
 To build the project with Gradle, run `./gradlew build`
 
 To distribute, run `./gradlew dist` - This will create a self-contained executable in the `app/bin/dist` directory.
+
+## Further Reading
+
+[CONTRIBUTING.md](https://github.com/soda3x/Moneybags/CONTRIBUTING.md)
+
+[STYLE.md](https://github.com/soda3x/Moneybags/STYLE.md)
