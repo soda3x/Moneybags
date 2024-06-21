@@ -85,3 +85,11 @@ switch (dayOfWeek) {
         return "not good";
 }
 ```
+
+## Interfaces
+
+Interfaces are prefixed with `I`:
+
+```java
+public interface IMyInterface
+```
