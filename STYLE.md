@@ -41,7 +41,7 @@ public String firstName = "Brad";
 Constants are in ALL_CAPS with underscores to separate words:
 
 ```java
-private static final APP_VERSION = "1.0.0";
+private static final String APP_VERSION = "1.0.0";
 ```
 
 ## Methods
