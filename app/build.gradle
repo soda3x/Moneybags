@@ -81,7 +81,7 @@ task dist(type: Exec) {
     def runtimeDir = "${projectDir}/bin/runtime"
 
     doFirst {
-        delete fileTree(outputDir)
+        delete outputDir
         mkdir outputDir
     }
 
